@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f16d83f64670447820a71fd4305ed2, type: 3}
   m_Name: MineSweeper
   m_EditorClassIdentifier: 
-  size: 1
-  position: {x: 0, y: 0}
-  miniGameScene: test
+  size: 2.15
+  position: {x: 0, y: 2.2}
+  miniGameScene: AAASUPPRIMER
