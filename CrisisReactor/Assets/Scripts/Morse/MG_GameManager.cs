@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using Unity.VisualScripting;
-using TMPro;
+
 
 public class MG_GameManager : MonoBehaviour
 {
@@ -34,7 +34,7 @@ public class MG_GameManager : MonoBehaviour
         waitedWord = "";
         for (int i = 0; i < 3; i++)
         {
-            waitedWord = waitedWord + morseCode.ElementAt(Random.Range(0, morseCode.Count)).Key;
+            waitedWord = waitedWord + morseCode.ElementAt(UnityEngine.Random.Range(0, morseCode.Count)).Key;
         }
         Debug.Log("mot attendu = " + waitedWord);
         PlayAnimButton();
@@ -52,13 +52,13 @@ public class MG_GameManager : MonoBehaviour
 
     private void CheckWord(string _commitedWord)
     {
-        if(_commitedWord == waitedWord)
+        if(string.Equals(_commitedWord, waitedWord, StringComparison.OrdinalIgnoreCase))
         {
-            Debug.Log("winned");
+            Debug.Log("Gagné");
         }
         else
         {
-             Debug.Log("loosed");
+            Debug.Log("Perdu");
         }
     }
 
@@ -79,7 +79,7 @@ public class MG_GameManager : MonoBehaviour
                         soundManager.PlaySound();
                         yield return new WaitForSeconds(0.5f);
                     }
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(1.5f);
                 }
             }
             ChangeSpriteColor(Color.red);
