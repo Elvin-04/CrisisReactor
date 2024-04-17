@@ -6,6 +6,6 @@ public class InstantiatePrefab : MonoBehaviour
     [SerializeField] private List<GameObject> prefabPatern;
     void Start()
     {
-        Instantiate(prefabPatern[Random.Range(0,4)], Vector3.zero, Quaternion.identity);
+        Instantiate(prefabPatern[Random.Range(0,prefabPatern.Count)], Vector3.zero, Quaternion.identity);
     }
 }

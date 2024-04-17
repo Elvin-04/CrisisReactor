@@ -4,12 +4,14 @@ using UnityEngine.EventSystems;
 public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Vector3 initPos;
+    private float sizeXWire;
     [SerializeField] private GameObject endPos;
     private float distEndPos;
 
     private void Start()
     {
-        initPos = transform.position;
+        sizeXWire = gameObject.GetComponent<RectTransform>().sizeDelta.x;
+        initPos = new Vector3(transform.position.x - sizeXWire / 2, transform.position.y, transform.position.z);
         distEndPos = endPos.GetComponent<RectTransform>().sizeDelta.x;
         CheckWinWire.maxWire++;
     }
@@ -46,15 +48,15 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     private void ResetPos()
     {
-        transform.position = initPos;
+        transform.position = initPos + new Vector3(sizeXWire / 2, 0, 0);
         transform.localScale = Vector3.one;
         transform.eulerAngles = Vector3.zero;
     }
 
     private void SetPosImage(Vector3 pos)
     {
-        //Set position
-        gameObject.transform.localScale = new Vector3(Vector3.Distance(pos, initPos) / gameObject.GetComponent<RectTransform>().sizeDelta.x, 1, 1);
+        //Set position and scale
+        gameObject.transform.localScale = new Vector3(Vector3.Distance(pos, initPos) / sizeXWire, 1, 1);
         Vector3 newPos = (pos - initPos) / 2 + initPos;
         transform.position = newPos;
 
