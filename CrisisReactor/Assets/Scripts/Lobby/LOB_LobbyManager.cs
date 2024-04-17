@@ -27,14 +27,19 @@ public class LOB_LobbyManager : MonoBehaviour
     [SerializeField] private float duration;
     [SerializeField] private float magnitude;
 
-
-    private void Start()
+    private void Awake()
     {
         mainCamera = Camera.main;
 
         initCameraPosition = mainCamera.transform.position;
         initCameraSize = mainCamera.orthographicSize;
 
+        canvas = GameObject.Find("Canvas");
+    }
+
+    private void Start()
+    {
+        CancelZoom();
     }
 
 
@@ -51,6 +56,9 @@ public class LOB_LobbyManager : MonoBehaviour
                 && Vector2.Distance(mainCamera.transform.position, cameraPositionDestination) <= 0.05f)
             {
                 zoom = false;
+                PlayerPrefs.SetFloat("CamPosX", cameraPositionDestination.x);
+                PlayerPrefs.SetFloat("CamPosY", cameraPositionDestination.y);
+                PlayerPrefs.SetFloat("CamSize", cameraSizeDestination);
                 SceneManager.LoadScene(minigameSelected.miniGameScene);
             }
 
@@ -58,7 +66,8 @@ public class LOB_LobbyManager : MonoBehaviour
                 && Vector2.Distance(mainCamera.transform.position, cameraPositionDestination) <= 0.05f)
             {
                 cancelZoom = false;
-                canvas.SetActive(true);
+                if(canvas != null)
+                    canvas.SetActive(true);
             }
         }
     }
@@ -75,6 +84,9 @@ public class LOB_LobbyManager : MonoBehaviour
 
     public void CancelZoom()
     {
+        mainCamera.transform.position = new Vector3(PlayerPrefs.GetFloat("CamPosX"), PlayerPrefs.GetFloat("CamPosY"), -10);
+        mainCamera.orthographicSize = PlayerPrefs.GetFloat("CamSize");
+
         cameraPositionDestination = initCameraPosition;
         cameraSizeDestination = initCameraSize;
         minigameSelected = null;
