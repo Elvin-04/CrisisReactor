@@ -7,6 +7,6 @@ public class CheckWinWire : MonoBehaviour
 
     public static bool CheckWin()
     {
-        return maxWire == nbWireWonnect;
+        return nbWireWonnect >= maxWire;
     }
 }

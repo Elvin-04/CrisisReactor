@@ -10,12 +10,12 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private void Start()
     {
         initPos = transform.position;
-        distEndPos = endPos.GetComponent<RectTransform>().sizeDelta.x / 2;
+        distEndPos = endPos.GetComponent<RectTransform>().sizeDelta.x;
         CheckWinWire.maxWire++;
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("BeginDrag");   //A voir si cela peut servir
+        Debug.Log("BeginDrag");   //This can be used
     }
 
     public void OnDrag(PointerEventData eventData)
