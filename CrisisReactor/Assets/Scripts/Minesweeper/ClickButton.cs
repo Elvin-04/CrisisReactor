@@ -16,8 +16,9 @@ public class ClickButton : MonoBehaviour
         {
             gameObject.GetComponent<Image>().color = Color.white;  //Changer Sprite
             SetBoolButton.nbBoolSafe++;
-            if (SetBoolButton.nbBoolSafe == SetBoolButton.maxBoolSafe)
+            if (SetBoolButton.nbBoolSafe >= SetBoolButton.maxBoolSafe)
             {
+                gameObject.transform.parent.gameObject.SetActive(false);
                 print("Win");
             }
         }
