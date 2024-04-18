@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Tilemaps;
 
 public class LOB_LobbyManager : MonoBehaviour
 {
@@ -23,9 +20,6 @@ public class LOB_LobbyManager : MonoBehaviour
     private bool zoom = false;
     private bool cancelZoom = false;
 
-    [Header("Camera Shake")]
-    [SerializeField] private float duration;
-    [SerializeField] private float magnitude;
 
     private void Awake()
     {
@@ -93,32 +87,6 @@ public class LOB_LobbyManager : MonoBehaviour
 
         cancelZoom = true;
     }
-
-    //IEnumerator CameraShake()
-    //{
-    //    Vector3 startPosition = mainCamera.transform.localPosition;
-    //    float elapsedTime = 0f;
-
-    //    while(elapsedTime < duration)
-    //    {
-    //        float x = Random.Range(-1f, 1f) * magnitude;
-    //        float y = Random.Range(-1f, 1f) * magnitude;
-
-    //        Vector3 pos = new Vector3(x, y, startPosition.z);
-    //        mainCamera.transform.localPosition = Vector3.Lerp(mainCamera.transform.localPosition, pos, Time.deltaTime * 0.1f );
-
-    //        elapsedTime += Time.deltaTime;
-    //        yield return null;
-    //    }
-
-    //    while(Vector3.Distance(mainCamera.transform.position, startPosition) > 0.01f)
-    //    {
-    //        mainCamera.transform.localPosition = Vector3.Lerp(mainCamera.transform.localPosition, startPosition, Time.deltaTime * 2f);
-    //        yield return null;
-    //    }
-
-    //    mainCamera.transform.position = startPosition;
-    //}
 
 
 }

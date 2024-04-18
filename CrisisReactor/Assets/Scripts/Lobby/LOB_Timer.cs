@@ -20,7 +20,7 @@ public class LOB_Timer : MonoBehaviour
         if(multiScene.Length <= 1)
         {
             DontDestroyOnLoad(gameObject);
-            value = 1;
+            value = 1; 
         }
         else
         {
@@ -33,17 +33,15 @@ public class LOB_Timer : MonoBehaviour
                 }
             }
         }
-
-        //GetComponent<LOB_LobbyManager>().CancelZoom();
     }
 
     
 
     private void FixedUpdate()
     {
-        currentTime -= Time.deltaTime;
+        currentTime -= Time.unscaledDeltaTime;
         if (timerText != null)
-            timerText.text = (int)currentTime / 60 + ":" + (int)currentTime % 60;
+            timerText.text = ((int)currentTime / 60).ToString("00") + ":" + ((int)currentTime % 60).ToString("00");
         else
             if(GameObject.Find("TimerText") != null)
                 timerText = GameObject.Find("TimerText").GetComponent<TextMeshProUGUI>();
