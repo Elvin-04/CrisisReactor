@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,13 +12,43 @@ public class AC_GameManager : MonoBehaviour
     private int width;
     private int height;
     private GridLayoutGroup gridLayout;
+    private AC_ENUM_Cell.CellType waitedAtom;
+    [SerializeField] private Image waitedAtomImage;
+    [SerializeField] private TextMeshProUGUI waitedAtomText;
+    [SerializeField] private Sprite[] atomsSprites;
 
 
         void Start()
         {   
-            width = Random.Range(4, 12);
-            height = Random.Range(4, 12);
+            width = Random.Range(4, 8);
+            height = Random.Range(4, 9);
             gridLayout = GetComponent<GridLayoutGroup>();
+
+            int randomizedWaitedAtom = Random.Range(0, 2);
+
+
+            switch (randomizedWaitedAtom)
+                        {
+                            case 0:
+                            waitedAtom = AC_ENUM_Cell.CellType.Blue;
+                            waitedAtomText.text = "Résultat attendu : BLUE";
+                            waitedAtomImage.sprite = atomsSprites[4];
+                            break;
+                            case 1:
+                            waitedAtom = AC_ENUM_Cell.CellType.Magenta;
+                            waitedAtomText.text = "Résultat attendu : MAGENTA";
+                            waitedAtomImage.sprite = atomsSprites[5];
+                            break;
+                            case 2:
+                            waitedAtom = AC_ENUM_Cell.CellType.Red;
+                            waitedAtomText.text = "Résultat attendu : RED";
+                            waitedAtomImage.sprite = atomsSprites[6];
+                            break;
+                        }
+           
+
+
+
             CreateGrid();
         }
 
@@ -120,6 +151,12 @@ public class AC_GameManager : MonoBehaviour
         {
             selectedCell.InitCell(UpgradeAtoms(selectedCell.GetCellType(), _cellFrom.GetCellType()));
             _cellFrom.InitCell(AC_ENUM_Cell.CellType.White);
+
+            if(selectedCell.GetCellType() == waitedAtom)
+            {
+                Debug.Log("winned");
+            }
+
             selectedCell.ResetCell();
             OnCellUnselected();
         }
