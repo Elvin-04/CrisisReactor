@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AtomesCrush.unity
     guid: 0f19ed0615d123b428d9abc90ef34495
+  - enabled: 1
+    path: Assets/Scenes/Lucas_D_Labyrinthe.unity
+    guid: 5803e90a65084384fa8aa9d21f4aa7c7
+  - enabled: 1
+    path: Assets/Scenes/MorseGame.unity
+    guid: 3db760999e2a88a488924b5c3bb9d18b
   m_configObjects: {}
