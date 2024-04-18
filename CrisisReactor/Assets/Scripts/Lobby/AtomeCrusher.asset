@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8f16d83f64670447820a71fd4305ed2, type: 3}
-  m_Name: MineSweeper
+  m_Name: AtomeCrusher
   m_EditorClassIdentifier: 
   size: 0.9
-  position: {x: -1.65, y: 1.95}
-  miniGameScene: TESTS_LucasD
+  position: {x: 4.9, y: 1.95}
+  miniGameScene: AtomesCrush
