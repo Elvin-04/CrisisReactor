@@ -31,6 +31,7 @@ public class LOB_Timer : MonoBehaviour
                 {
                     Destroy(go);
                 }
+                
             }
         }
     }

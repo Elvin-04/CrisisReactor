@@ -33,7 +33,8 @@ public class LOB_LobbyManager : MonoBehaviour
 
     private void Start()
     {
-        CancelZoom();
+        if(PlayerPrefs.GetInt("Zoom") == 1)
+            CancelZoom();
     }
 
 
@@ -50,6 +51,7 @@ public class LOB_LobbyManager : MonoBehaviour
                 && Vector2.Distance(mainCamera.transform.position, cameraPositionDestination) <= 0.05f)
             {
                 zoom = false;
+                PlayerPrefs.SetInt("Zoom", 1);
                 PlayerPrefs.SetFloat("CamPosX", cameraPositionDestination.x);
                 PlayerPrefs.SetFloat("CamPosY", cameraPositionDestination.y);
                 PlayerPrefs.SetFloat("CamSize", cameraSizeDestination);
@@ -74,6 +76,11 @@ public class LOB_LobbyManager : MonoBehaviour
 
         zoom = true;
         canvas.SetActive(false);
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("Zoom", 0);
     }
 
     public void CancelZoom()
