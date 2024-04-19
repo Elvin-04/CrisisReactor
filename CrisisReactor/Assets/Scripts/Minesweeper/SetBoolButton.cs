@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//grid generation
 public class SetBoolButton : MonoBehaviour
 {
     [SerializeField] private List<bool> yellow = new();
@@ -54,6 +56,8 @@ public class SetBoolButton : MonoBehaviour
             button[i].GetComponent<ClickButton>().isBomb = list[i];
         }
     }
+
+    //count cell without bombs
 
     private int SetMaxBoolSafe(List<bool> list)
     {

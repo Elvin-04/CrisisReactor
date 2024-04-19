@@ -14,6 +14,7 @@ public class MG_GameManager : MonoBehaviour
     private Animator animator;
     private string waitedWord;
 
+    //morseCode dictionnary is used to translate from char to morse code
     private Dictionary<char, string> morseCode = new Dictionary<char, string>()
     {	{'A', ".-"},{'B', "-..."},{'C', "-.-."},{'D', "-.."},{'E', "."},{'F', "..-."},{'G', "--."},{'H', "...."},{'I', ".."},
         {'J', ".---"},{'K', "-.-"},{'L', ".-.."},{'M', "--"},{'N', "-."},{'O', "---"},{'P', ".--."},{'Q', "--.-"},{'R', ".-."},
@@ -62,6 +63,8 @@ public class MG_GameManager : MonoBehaviour
         }
     }
 
+
+    //execute morse sequence with sound and sprite swapping
     IEnumerator ExecuteMorse()
     {
         while (true)

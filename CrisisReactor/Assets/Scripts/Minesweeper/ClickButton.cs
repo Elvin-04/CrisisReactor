@@ -5,16 +5,17 @@ public class ClickButton : MonoBehaviour
 {
     public bool isBomb;
 
+    //interact with grid cell
     public void OnClick()
     {
         if (isBomb)
         {
-            gameObject.GetComponent<Image>().color = Color.red;    //Changer Sprite
-            print("Dead");  //Enlever du timer
+            gameObject.GetComponent<Image>().color = Color.red;
+            print("Dead"); 
         }
         else
         {
-            gameObject.GetComponent<Image>().color = Color.white;  //Changer Sprite
+            gameObject.GetComponent<Image>().color = Color.white;
             SetBoolButton.nbBoolSafe++;
             if (SetBoolButton.nbBoolSafe >= SetBoolButton.maxBoolSafe)
             {

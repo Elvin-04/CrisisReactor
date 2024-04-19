@@ -15,6 +15,9 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         distEndPos = endPos.GetComponent<RectTransform>().sizeDelta.x;
         CheckWinWire.maxWire++;
     }
+
+    /// 
+    // drag and drop operations
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("BeginDrag");   //This can be used
@@ -46,6 +49,7 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         }
     }
 
+    ////
     private void ResetPos()
     {
         transform.position = initPos + new Vector3(sizeXWire / 2, 0, 0);
