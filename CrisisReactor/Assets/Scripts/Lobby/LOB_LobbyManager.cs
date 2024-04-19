@@ -40,7 +40,7 @@ public class LOB_LobbyManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        //Do the camera zoom
         if(zoom || cancelZoom)
         {
             mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, cameraSizeDestination, cameraZoomSpeed * Time.deltaTime);
@@ -68,6 +68,7 @@ public class LOB_LobbyManager : MonoBehaviour
         }
     }
 
+    //Set the values
     public void Zoom(LOB_MiniGame game)
     {
         cameraPositionDestination = game.position;
@@ -83,6 +84,7 @@ public class LOB_LobbyManager : MonoBehaviour
         PlayerPrefs.SetInt("Zoom", 0);
     }
 
+    //Set the values
     public void CancelZoom()
     {
         mainCamera.transform.position = new Vector3(PlayerPrefs.GetFloat("CamPosX"), PlayerPrefs.GetFloat("CamPosY"), -10);
