@@ -64,6 +64,7 @@ public class MG_GameManager : MonoBehaviour
         {
             Debug.Log("Perdu");
             LOB_Timer.instance.RemoveTimer(20);
+            soundManager.PlaySound(4);
         }
     }
 
@@ -83,7 +84,7 @@ public class MG_GameManager : MonoBehaviour
                         ChangeSpriteColor(Color.white);
                         yield return new WaitForSeconds(duration);
                         ChangeSpriteColor(Color.black);
-                        soundManager.PlaySound();
+                        soundManager.PlaySound(0);
                         yield return new WaitForSeconds(0.5f);
                     }
                     yield return new WaitForSeconds(3f);
