@@ -1,24 +1,37 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class AC_GridCell : MonoBehaviour
+public class AC_GridCell : MonoBehaviour, IPointerEnterHandler
 {
     public AC_GameManager gameManager;
     private Image image;
     private bool isSelected = false;
     private bool isEnabled = true;
     private AC_ENUM_Cell.CellType cellType;
+    private MG_SoundManager soundManager;
+
+    public void SetsoundManager(MG_SoundManager _soundManager)
+    {
+        soundManager = _soundManager;
+    }
+
+    public void OnPointerEnter(PointerEventData pointerEventData)
+    {
+        soundManager.PlaySound(1);
+    }
 
     void Start()
     {
         Button button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
     }
+
     private void OnClick()
     {
-       
         if(isEnabled)
         {
+            soundManager.PlaySound(3);
             if(!isSelected)
             {
                 if(gameManager.GetSelectedCell() == null)
