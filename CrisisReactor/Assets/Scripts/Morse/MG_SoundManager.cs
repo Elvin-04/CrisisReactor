@@ -11,8 +11,8 @@ public class MG_SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlaySound()
+    public void PlaySound(int soundIndex)
     {
-        audioSource.PlayOneShot(sounds[0]);
+        audioSource.PlayOneShot(sounds[soundIndex]);
     }
 }
