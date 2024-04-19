@@ -28,7 +28,7 @@ public class AC_GameManager : MonoBehaviour
             height = Random.Range(4, 9);
             gridLayout = GetComponent<GridLayoutGroup>();
 
-            int randomizedWaitedAtom = Random.Range(0, 4);
+            int randomizedWaitedAtom = Random.Range(0, 2);
 
 
             switch (randomizedWaitedAtom)
