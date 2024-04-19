@@ -93,6 +93,7 @@ public class LOB_Timer : MonoBehaviour
             else
                 currentIndex = 0;
             Instantiate(digicodePrefab);
+            timeCodeDigicode.Remove((int)currentTime);
         }
 
         //Loose condition
