@@ -8,13 +8,13 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private float sizeXWire;
     [SerializeField] private GameObject endPos;
     private float distEndPos;
+    [HideInInspector] public bool isConnect;
 
     private void Start()
     {
         sizeXWire = gameObject.GetComponent<RectTransform>().sizeDelta.x;
         initPos = new Vector3(transform.position.x - sizeXWire / 2, transform.position.y, transform.position.z);
         distEndPos = endPos.GetComponent<RectTransform>().sizeDelta.x;
-        CheckWinWire.maxWire++;
     }
 
     /// 
@@ -37,14 +37,15 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         {
             ResetPos();
             Debug.Log("Dead");
+            isConnect = false;
             LOB_Timer.instance.RemoveTimer(20);
         }
         else
         {
             SetPosImage(endPos.transform.position);
             Debug.Log("Success");
-            CheckWinWire.nbWireWonnect++;
-            if (CheckWinWire.CheckWin())
+            isConnect = true;
+            if (CheckWinWire.Instance.CheckWin())
             {
                 Debug.Log("Win");
                 PlayerPrefs.SetInt("MiniGame3", 1);
