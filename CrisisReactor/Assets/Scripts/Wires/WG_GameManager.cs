@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -36,6 +37,7 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         {
             ResetPos();
             Debug.Log("Dead");
+            LOB_Timer.instance.RemoveTimer(20);
         }
         else
         {
@@ -45,6 +47,8 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             if (CheckWinWire.CheckWin())
             {
                 Debug.Log("Win");
+                PlayerPrefs.SetInt("MiniGame3", 1);
+                SceneManager.LoadScene("Lobby");
             }
         }
     }
