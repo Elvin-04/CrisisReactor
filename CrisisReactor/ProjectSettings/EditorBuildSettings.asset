@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MorseGame.unity
     guid: 3db760999e2a88a488924b5c3bb9d18b
+  - enabled: 1
+    path: Assets/Scenes/UIDefeatVictory.unity
+    guid: f47010d9a2a14fa4594d21c56b15759d
   m_configObjects: {}
