@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,12 +16,20 @@ public class LOB_Timer : MonoBehaviour
 
     public static LOB_Timer instance;
 
+    [Header("DigiCode")]
+    public GameObject digicodePrefab;
+    [SerializeField] private int digicodeSpawnCount;
+    private List<float> timeCodeDigicode = new List<float>();
+    private int currentIndex;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
+
+
     }
 
 
@@ -31,7 +41,15 @@ public class LOB_Timer : MonoBehaviour
         if(multiScene.Length <= 1)
         {
             DontDestroyOnLoad(gameObject);
-            value = 1; 
+            value = 1;
+
+            for (int i = 0; i < digicodeSpawnCount; i++)
+            {
+                timeCodeDigicode.Add((int)Random.Range(30, totalTime - 15f));
+                Debug.Log(timeCodeDigicode[i]);
+            }
+
+            currentIndex = 0;
         }
         else
         {
@@ -68,15 +86,23 @@ public class LOB_Timer : MonoBehaviour
             GetComponent<AudioSource>().Play();
         }
 
+        if(timeCodeDigicode.Contains((int)currentTime))
+        {
+            if (currentIndex + 1 < digicodeSpawnCount)
+                currentIndex++;
+            else
+                currentIndex = 0;
+            Instantiate(digicodePrefab);
+            timeCodeDigicode.Remove((int)currentTime);
+        }
+
         //Loose condition
         if(currentTime <= 0 && !endGame)
         {
-            Debug.Log("Loose");
             currentTime = -1;
             endGame = true;
             SceneManager.LoadScene("UIDefeatVictory");
             //Play anim or sounds here
-
         }
     }
 

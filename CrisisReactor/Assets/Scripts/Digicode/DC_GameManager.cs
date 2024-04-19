@@ -1,4 +1,5 @@
 using TMPro;
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,7 @@ public class DC_GameManager : MonoBehaviour
     private string waitedCode;
     [SerializeField] private TextMeshProUGUI enteredCodeText;
 
-    void Awake()
+    void OnEnable()
     {
         InitCodeFromPool();
     }
@@ -45,6 +46,7 @@ public class DC_GameManager : MonoBehaviour
             Debug.Log("winned");
             DC_DigicodeCodesList.correctCodes.Remove(enteredCode);
             SceneManager.LoadScene("Lobby");
+            Destroy(transform.parent.gameObject);
         }
         else
         {
