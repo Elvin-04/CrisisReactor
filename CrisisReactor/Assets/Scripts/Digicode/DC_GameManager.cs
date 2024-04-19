@@ -9,7 +9,7 @@ public class DC_GameManager : MonoBehaviour
     private string waitedCode;
     [SerializeField] private TextMeshProUGUI enteredCodeText;
 
-    void Awake()
+    void OnEnable()
     {
         InitCodeFromPool();
     }
