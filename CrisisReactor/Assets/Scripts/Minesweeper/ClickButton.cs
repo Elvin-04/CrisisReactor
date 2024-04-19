@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ClickButton : MonoBehaviour
@@ -10,16 +11,21 @@ public class ClickButton : MonoBehaviour
     {
         if (isBomb)
         {
-            gameObject.GetComponent<Image>().color = Color.red;
-            print("Dead"); 
+            SetBoolButton.nbBoolSafe = 0;
+            print("Dead");
+            LOB_Timer.instance.RemoveTimer(20);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
         {
             gameObject.GetComponent<Image>().color = Color.white;
+            gameObject.GetComponent<Button>().interactable = false;
             SetBoolButton.nbBoolSafe++;
             if (SetBoolButton.nbBoolSafe >= SetBoolButton.maxBoolSafe)
             {
-                gameObject.transform.parent.gameObject.SetActive(false);
+                SetBoolButton.nbBoolSafe = 0;
+                SceneManager.LoadScene("Lobby");
+                PlayerPrefs.SetInt("MiniGame2", 1);
                 print("Win");
             }
         }

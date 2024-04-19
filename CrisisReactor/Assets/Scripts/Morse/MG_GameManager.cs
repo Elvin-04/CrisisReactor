@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 
 public class MG_GameManager : MonoBehaviour
@@ -56,10 +57,13 @@ public class MG_GameManager : MonoBehaviour
         if(string.Equals(_commitedWord, waitedWord, StringComparison.OrdinalIgnoreCase))
         {
             Debug.Log("Gagné");
+            PlayerPrefs.SetInt("MiniGame5", 1);
+            SceneManager.LoadScene("Lobby");
         }
         else
         {
             Debug.Log("Perdu");
+            LOB_Timer.instance.RemoveTimer(20);
             soundManager.PlaySound(4);
         }
     }
@@ -76,14 +80,14 @@ public class MG_GameManager : MonoBehaviour
                 {
                     foreach (char morseChar in morseSequence)
                     {
-                        float duration = (morseChar == '.') ? 0.2f : 1f;
-                        ChangeSpriteColor(Color.black);
-                        yield return new WaitForSeconds(duration);
+                        float duration = (morseChar == '.') ? 0.2f : 1.5f;
                         ChangeSpriteColor(Color.white);
+                        yield return new WaitForSeconds(duration);
+                        ChangeSpriteColor(Color.black);
                         soundManager.PlaySound(0);
                         yield return new WaitForSeconds(0.5f);
                     }
-                    yield return new WaitForSeconds(1.5f);
+                    yield return new WaitForSeconds(3f);
                 }
             }
             ChangeSpriteColor(Color.red);

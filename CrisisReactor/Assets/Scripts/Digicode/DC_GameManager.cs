@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DC_GameManager : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class DC_GameManager : MonoBehaviour
         {
             Debug.Log("winned");
             DC_DigicodeCodesList.correctCodes.Remove(enteredCode);
+            SceneManager.LoadScene("Lobby");
         }
         else
         {

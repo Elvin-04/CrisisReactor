@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class L_Player : MonoBehaviour
@@ -54,6 +55,8 @@ public class L_Player : MonoBehaviour
     {
         if (cases[currentCase].isEndCase)
         {
+            PlayerPrefs.SetInt("MiniGame1", 1);
+            SceneManager.LoadScene("Lobby");
             Debug.Log("Win");
         }
     }
@@ -64,6 +67,7 @@ public class L_Player : MonoBehaviour
         currentCase = initCase;
         cases[currentCase].gameObject.GetComponent<Image>().color = Color.green;
         Debug.Log("Dead");
+        LOB_Timer.instance.RemoveTimer(20);
     }
 
     public void Update()

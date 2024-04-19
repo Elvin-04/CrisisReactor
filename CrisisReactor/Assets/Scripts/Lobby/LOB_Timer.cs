@@ -1,14 +1,26 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LOB_Timer : MonoBehaviour
 {
     [Header("Timer")]
-    [SerializeField] private float totalTime = 300;
-    [SerializeField] private float currentTime = 300;
+    public float totalTime = 300;
+    public float currentTime = 300;
     [SerializeField] private TextMeshProUGUI timerText;
     [HideInInspector] public int value = 0;
     int currentTimeInt;
+    [HideInInspector] public bool endGame;
+
+    public static LOB_Timer instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
 
     //Create DontDestroyOnLoad scene 
@@ -40,7 +52,8 @@ public class LOB_Timer : MonoBehaviour
     private void FixedUpdate()
     {
         //Update the timer variable
-        currentTime -= Time.unscaledDeltaTime;
+        if (currentTime > 0)
+            currentTime -= Time.unscaledDeltaTime;
         //Update and set the time text on screen
         if (timerText != null)
             timerText.text = ((int)currentTime / 60).ToString("00") + ":" + ((int)currentTime % 60).ToString("00");
@@ -56,12 +69,22 @@ public class LOB_Timer : MonoBehaviour
         }
 
         //Loose condition
-        if(currentTime <= 0)
+        if(currentTime <= 0 && !endGame)
         {
             Debug.Log("Loose");
+            currentTime = -1;
+            endGame = true;
+            SceneManager.LoadScene("UIDefeatVictory");
             //Play anim or sounds here
-        }
 
+        }
+    }
+
+    public void RemoveTimer(float second)
+    {
+        currentTime -= second;
+        if (currentTime < 0)
+            currentTime = 0;
     }
 
 }
