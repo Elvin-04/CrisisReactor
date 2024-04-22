@@ -187,7 +187,6 @@ public class AC_GameManager : MonoBehaviour
 
     private bool CheckForUpgrade(AC_GridCell _cellToUpgrade, AC_GridCell _cellToDestroy)
     {
-        Debug.Log(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position));
         if(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position) < 156f && UpgradeAtoms(_cellToUpgrade.GetCellType(), selectedCell.GetCellType()) != AC_ENUM_Cell.CellType.Black)
         {
             return true;

@@ -19,7 +19,6 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         soundManager.PlaySound(1);
-        Debug.Log("sgfsd");
     }
 
     void Start()
