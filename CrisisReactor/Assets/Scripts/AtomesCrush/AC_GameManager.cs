@@ -24,8 +24,8 @@ public class AC_GameManager : MonoBehaviour
         }
         void Start()
         {   
-            width = Random.Range(4, 8);
-            height = Random.Range(4, 9);
+            width = Random.Range(5, 8);
+            height = Random.Range(5, 9);
             gridLayout = GetComponent<GridLayoutGroup>();
 
             int randomizedWaitedAtom = Random.Range(0, 2);
@@ -167,6 +167,7 @@ public class AC_GameManager : MonoBehaviour
     {
         if(CheckForUpgrade(_cellFrom, selectedCell))
         {
+            soundManager.PlaySound(5);
             selectedCell.InitCell(UpgradeAtoms(selectedCell.GetCellType(), _cellFrom.GetCellType()));
             _cellFrom.InitCell(AC_ENUM_Cell.CellType.White);
 
@@ -177,6 +178,10 @@ public class AC_GameManager : MonoBehaviour
 
             selectedCell.ResetCell();
             OnCellUnselected();
+        }
+        else
+        {
+            soundManager.PlaySound(6);
         }
     }
 

@@ -31,11 +31,11 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler
     {
         if(isEnabled)
         {
-            soundManager.PlaySound(3);
             if(!isSelected)
             {
                 if(gameManager.GetSelectedCell() == null)
                 {
+                    soundManager.PlaySound(3);
                     gameManager.OnCellClicked(this);
                     image.transform.localScale = new Vector2(0.75f, 0.75f);
                     isSelected = !isSelected;
