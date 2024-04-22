@@ -9,13 +9,16 @@ public class L_Player : MonoBehaviour
     [SerializeField] private int currentCase;
     private int initCase;
     [SerializeField] private int lenght;
+    private MG_SoundManager soundManager;
 
     private void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
         initCase = currentCase;
     }
     public void Move(string direction)
     {
+        soundManager.PlaySound(0);
         switch (direction)
         {
             case "Up":
@@ -55,14 +58,21 @@ public class L_Player : MonoBehaviour
     {
         if (cases[currentCase].isEndCase)
         {
+            soundManager.PlaySound(1);
+            Invoke("OnVictory", 1.10f);
+        }
+    }
+
+    private void OnVictory()
+    {
             PlayerPrefs.SetInt("MiniGame1", 1);
             SceneManager.LoadScene("Lobby");
             Debug.Log("Win");
-        }
     }
 
     public void ResetCase()
     {
+        soundManager.PlaySound(2);
         cases[currentCase].gameObject.GetComponent<Image>().color = Color.gray;
         currentCase = initCase;
         cases[currentCase].gameObject.GetComponent<Image>().color = Color.green;
