@@ -26,7 +26,7 @@ public class MG_GameManager : MonoBehaviour
 
     
 
-    void Awake()
+    void Start()
     {
         RandomWord();
     }
@@ -82,9 +82,17 @@ public class MG_GameManager : MonoBehaviour
                     {
                         float duration = (morseChar == '.') ? 0.2f : 1.5f;
                         ChangeSpriteColor(Color.white);
+                        if(duration == 0.2f)
+                        {
+                            soundManager.PlaySound(5);
+                        }
+                        else
+                        {
+                            soundManager.PlaySound(6);
+                        }
                         yield return new WaitForSeconds(duration);
                         ChangeSpriteColor(Color.black);
-                        soundManager.PlaySound(0);
+                        
                         yield return new WaitForSeconds(0.5f);
                     }
                     yield return new WaitForSeconds(3f);

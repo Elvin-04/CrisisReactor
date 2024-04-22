@@ -8,6 +8,7 @@ public class DC_GameManager : MonoBehaviour
     private string enteredCode;
     private string waitedCode;
     [SerializeField] private TextMeshProUGUI enteredCodeText;
+    [SerializeField] private MG_SoundManager soundManager;
 
     void OnEnable()
     {
@@ -23,6 +24,7 @@ public class DC_GameManager : MonoBehaviour
 
     public void enterNumber(int _newNumber)
     {
+        soundManager.PlaySound(0);
         if(enteredCode != null)
         {
             if(enteredCode.Length < 4)
@@ -39,17 +41,26 @@ public class DC_GameManager : MonoBehaviour
 
     }
 
-    private void CheckCode()
+    private void OnWin()
     {
-        if(enteredCode == waitedCode)
-        {
             Debug.Log("winned");
             DC_DigicodeCodesList.correctCodes.Remove(enteredCode);
             SceneManager.LoadScene("Lobby");
             Destroy(transform.parent.gameObject);
+    }
+
+    private void CheckCode()
+    {
+        if(enteredCode == waitedCode)
+        {
+            soundManager.PlaySound(2);
+
+            Invoke("OnWin", 1.25f);
+           
         }
         else
         {
+            soundManager.PlaySound(1);
             Debug.Log("wrong code");
             enteredCode = "";
             UpadteEnteredTextUI();
