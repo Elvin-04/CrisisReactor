@@ -9,18 +9,21 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     [SerializeField] private GameObject endPos;
     private float distEndPos;
     [HideInInspector] public bool isConnect;
+    private MG_SoundManager soundManager;
 
     private void Start()
-    {
+    { 
         sizeXWire = gameObject.GetComponent<RectTransform>().sizeDelta.x;
         initPos = new Vector3(transform.position.x - sizeXWire / 2, transform.position.y, transform.position.z);
         distEndPos = endPos.GetComponent<RectTransform>().sizeDelta.x;
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
     }
 
     /// 
     // drag and drop operations
     public void OnBeginDrag(PointerEventData eventData)
     {
+        soundManager.PlaySound(0);
         Debug.Log("BeginDrag");   //This can be used
     }
 
@@ -36,6 +39,7 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (Vector3.Distance(Input.mousePosition, endPos.transform.position) > distEndPos)
         {
             ResetPos();
+            soundManager.PlaySound(2);
             Debug.Log("Dead");
             isConnect = false;
             LOB_Timer.instance.RemoveTimer(20);
@@ -43,7 +47,9 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         else
         {
             SetPosImage(endPos.transform.position);
+            soundManager.PlaySound(1);
             Debug.Log("Success");
+
             isConnect = true;
             if (CheckWinWire.Instance.CheckWin())
             {
