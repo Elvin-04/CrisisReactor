@@ -17,6 +17,7 @@ public class S_OnClick : MonoBehaviour
             print(S_GameManager.nbGoodprite);
             if (S_GameManager.nbGoodprite <= 0 )
             {
+                PlayerPrefs.SetInt("MiniGame6", 1);
                 SceneManager.LoadScene("Lobby");
             }
         }
