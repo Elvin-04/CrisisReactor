@@ -16,10 +16,21 @@ public class SetBoolButton : MonoBehaviour
 
     public static int nbBoolSafe = 0;
     public static int maxBoolSafe;
+    private bool canPlay = true;
 
     private void Start()
     {
         SetColor();
+    }
+
+    public bool getCanPlay()
+    {
+        return canPlay;
+    }
+
+    public void OnBombExplode()
+    {
+        canPlay = false;
     }
 
     public void SetColor()
