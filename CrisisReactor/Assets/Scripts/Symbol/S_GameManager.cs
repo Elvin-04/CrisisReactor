@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class S_GameManager : MonoBehaviour
@@ -7,7 +9,7 @@ public class S_GameManager : MonoBehaviour
     [SerializeField] private List<Sprite> GoodSprite = new();
     [SerializeField] private List<Sprite> BadSprite = new();
     [SerializeField] private List<Image> imageButton = new();
-    private int nbGoodprite;
+    public static int nbGoodprite;
     void Start()
     {
         SetGoodSprite();
@@ -17,16 +19,21 @@ public class S_GameManager : MonoBehaviour
     private void SetGoodSprite()
     {
         nbGoodprite = Random.Range(1, 4);
+        print(nbGoodprite);
         for (int i = 0; i < nbGoodprite; i++)
         {
             int random = Random.Range(0, imageButton.Count);
             int random2 = Random.Range(0, GoodSprite.Count);
-            if (imageButton[random].sprite != null || GoodSprite[random2] == null)
+            if (imageButton[random].sprite == null)
             {
-                continue;
+                imageButton[random].sprite = GoodSprite[random2];
+                imageButton[random].transform.parent.GetComponent<S_OnClick>().isGoodSprite = true;
+                GoodSprite.RemoveAt(random2);
             }
-            imageButton[random].sprite = GoodSprite[random2];
-            GoodSprite[random2] = null;
+            else
+            {
+                i--;
+            }
         }
     }
 
