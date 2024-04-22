@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoodSprite: 0
-  image: {fileID: 1792120979}
+  imageLed: {fileID: 1792120979}
 --- !u!1 &86746353
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoodSprite: 0
-  image: {fileID: 1266044868}
+  imageLed: {fileID: 1266044868}
 --- !u!1 &220516174
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoodSprite: 0
-  image: {fileID: 1893230267}
+  imageLed: {fileID: 1893230267}
 --- !u!1 &249662747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,7 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoodSprite: 0
-  image: {fileID: 404819723}
+  imageLed: {fileID: 404819723}
 --- !u!1 &447567378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoodSprite: 0
-  image: {fileID: 148355294}
+  imageLed: {fileID: 148355294}
 --- !u!1 &1092809886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,7 +1807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoodSprite: 0
-  image: {fileID: 1611757294}
+  imageLed: {fileID: 1611757294}
 --- !u!1 &1262592975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,7 +2498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoodSprite: 0
-  image: {fileID: 249662749}
+  imageLed: {fileID: 249662749}
 --- !u!1 &1773393386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,7 +2860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoodSprite: 0
-  image: {fileID: 1581032754}
+  imageLed: {fileID: 1581032754}
 --- !u!1 &1893230265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,7 +3084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoodSprite: 0
-  image: {fileID: 2119309710}
+  imageLed: {fileID: 2119309710}
 --- !u!1 &1999522544
 GameObject:
   m_ObjectHideFlags: 0

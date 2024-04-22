@@ -5,13 +5,13 @@ using UnityEngine.UI;
 public class S_OnClick : MonoBehaviour
 {
     public bool isGoodSprite;
-    [SerializeField] private Image image;
+    [SerializeField] private Image imageLed;
 
     public void OnClick()
     {
         if (isGoodSprite)
         {
-            image.color = Color.green;
+            imageLed.color = Color.green;
             gameObject.GetComponent<Button>().interactable = false;
             S_GameManager.nbGoodprite--;
             print(S_GameManager.nbGoodprite);
@@ -22,7 +22,7 @@ public class S_OnClick : MonoBehaviour
         }
         else
         {
-            image.color = Color.red;
+            imageLed.color = Color.red;
             LOB_Timer.instance.RemoveTimer(20);
         }
     }
