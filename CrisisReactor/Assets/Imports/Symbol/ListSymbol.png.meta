@@ -1,0 +1,1896 @@
+fileFormatVersion: 2
+guid: 945265acf19df64448741f25bc00c833
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ListSymbol_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 869
+        width: 128
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0df36f40e59cce46add747199870775
+      internalID: 1176976641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 866
+        width: 147
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2cf2ef1be9c09449f63db06c3dcb41
+      internalID: -1922342595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_2
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 872
+        width: 127
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbcfdfc098fd34e479230c30432b2e20
+      internalID: -320807199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_3
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 871
+        width: 135
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc71767e42f4dd4e8155127802cb319
+      internalID: -749984345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_4
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 877
+        width: 111
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0855f4fe84ca11a4a881ddeb0ea17818
+      internalID: 2106547930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_5
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 877
+        width: 39
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213fbde03adc42f4f8f9fe861fe77765
+      internalID: 1320575363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_6
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 929
+        width: 192
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043e315dbd529854ebc92e25c27e2d22
+      internalID: -1897391935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_7
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 921
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c9ec5ad8c1dd94d9ae6fb84aabea41
+      internalID: 1339570568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_8
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 877
+        width: 69
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cea08ff0457d4748ad20530216e9028
+      internalID: -1878954715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_9
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 808
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d1bb15c62d8eb478ed8eb935edb34a
+      internalID: 507015557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_10
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 707
+        width: 59
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 699ce77540cef254694ce38eea83078b
+      internalID: -1348848422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_11
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 806
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc3bb95b08c4d1478579b706525aa25
+      internalID: -349604046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_12
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 704
+        width: 123
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5837043d17bf6aa429092c490e8d89ea
+      internalID: -672627046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_13
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 704
+        width: 97
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7057c61c1f1b0f4186564cd2efdc5e4
+      internalID: -1359762881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_14
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 704
+        width: 112
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc712c0395e95b489232304a751dac7
+      internalID: -1469836726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_15
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 707
+        width: 124
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6d5a2a9a117c14983fe61ec105f741
+      internalID: 836891832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_16
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 424
+        width: 252
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d27ffc842caa94386e5314163ea2ba
+      internalID: -306171763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_17
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 776
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e899b04d17ac642afbcf878f537e19
+      internalID: -1715049646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 775
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daea069fcec36004d9b86fce309d3ff2
+      internalID: 1985539919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_19
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 745
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2ab582912d3774ba603bd2e34a7fee
+      internalID: -496437794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_20
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 742
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9751f5c55db71ef4496a0d7624c4423c
+      internalID: -1981042282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_21
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 707
+        width: 70
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c165c88909e0f149989108bf07b651c
+      internalID: -1385265191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_22
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 703
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f445372e21473834488a8d1404750446
+      internalID: 1369103173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_23
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 703
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf83a9d8d8833854e98bad35d8d0eb76
+      internalID: -123162822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_24
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 546
+        width: 135
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1601f9c1b9357e943838939132690d03
+      internalID: -763967622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_25
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 647
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40dea1642fa1749419655c2d04c43cdf
+      internalID: 1001434323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_26
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 646
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2f2f7cd365e7d4295e0b9b8e7b3ffa
+      internalID: -385067231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_27
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 561
+        width: 58
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418a6acb7c741d843945f9a229c24804
+      internalID: 1381736694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_28
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 560
+        width: 57
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84be4abc36da75b4888f2978cecd00ee
+      internalID: -595615753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_29
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 535
+        width: 102
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16b35b7d5f1335439862b5ec7f8351f
+      internalID: -1141538585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_30
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 647
+        width: 55
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce783a48492a0bb46aa4704e36b73085
+      internalID: 621337973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_31
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 636
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8125d2005c59208488dd3c949a4fdd6e
+      internalID: 898673588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_32
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 648
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccc88af80c4ae84b985e82a0ac478e7
+      internalID: -501386529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_33
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 636
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3e8061de50fe24181dfc98c5fd5169
+      internalID: -1154976730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_34
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 536
+        width: 79
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db67d1933a0d78a44af425e1cd63ca26
+      internalID: 907252994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_35
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 592
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f5a70d6e531df448f3b57b40cafacc
+      internalID: -1844183053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_36
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 538
+        width: 91
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a59ddce15d834446ba2817928a0096e
+      internalID: -530100983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_37
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 620
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233e2c9bfe9deb246ae558234ecc7701
+      internalID: -1747180225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_38
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 616
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5518f7380a3c15545b5009d0b2de1183
+      internalID: 442545347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_39
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 620
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 602b472779c97134cabca134bf2acbb3
+      internalID: 1270584686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_40
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 536
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee09ad0203e73644594b0f91454facda
+      internalID: 1334360043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_41
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 536
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166b141ea725c6745bfcd7a650dedee3
+      internalID: -481642109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_42
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 543
+        width: 125
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6d250704a5bba41ae000487ae79724
+      internalID: 1504603828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_43
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 403
+        width: 127
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7608e31f550083c41a8ffc1ff7b7da36
+      internalID: -175694668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_44
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 363
+        width: 92
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9f0ac4aa8f03949acb52b0b3c9ce35
+      internalID: -29139879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_45
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 376
+        width: 94
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051b794c8cd7bdb4f8244c1efccea3bd
+      internalID: 1585517636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_46
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 431
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ee8921b9f39b44eb3f4257d7070ac6
+      internalID: 1375280558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_47
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 446
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0bc5c7ee762912498004416a07d17cc
+      internalID: 639901351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_48
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 464
+        width: 13
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1acf6021c4b9642bf936758e5114e0
+      internalID: 564950871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_49
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 451
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492e137708ae0e34ab8a4b9b87d71228
+      internalID: -1994288562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_50
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 422
+        width: 120
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c38ce5769e0bc489fc16f8bce5c707
+      internalID: -832269583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_51
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 31
+        width: 247
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763ffc9fdf9d64f49b3c5ad0225c7205
+      internalID: -1002359703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_52
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 374
+        width: 118
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294e6272100010546a47a52b17835578
+      internalID: -833166268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_53
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 398
+        width: 112
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b42b6159e979f4cb40ee4f6a4d35e7
+      internalID: -1999644864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_54
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 362
+        width: 120
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d062e3293763efa4f9127cbeba2c7444
+      internalID: -350549886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_55
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 387
+        width: 95
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9abc15ed071823a4baf34901c1f3c91f
+      internalID: 51764638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_56
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 367
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d28ec47cf037542952cd8126ab27a3
+      internalID: 1584281712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_57
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 367
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b96739889b63984b8f83804f27e698f
+      internalID: 665356835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_58
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 363
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed96287491fe9f14d99f6211f524ea4f
+      internalID: -581795543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_59
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 193
+        width: 134
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644c31816dd1bf949a03903d4c3a43ce
+      internalID: 822952665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_60
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 192
+        width: 110
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a066fa3278bfbc94db808957dfdac4d2
+      internalID: 234493105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_61
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 191
+        width: 85
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf27d5fdb9a21934b807360d2d3670d6
+      internalID: -296362190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_62
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 189
+        width: 89
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b602bf7d9ef58ef4696198efef08d472
+      internalID: -1891551482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_63
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 270
+        width: 29
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1074fcf7de98a1041813f30d6df449d6
+      internalID: -1850780229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_64
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 270
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f539971a35779442956175cbc8f141d
+      internalID: -1558604443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_65
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 204
+        width: 136
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ab8fedab20137449b2f96d9b7cd0aa
+      internalID: 269328819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_66
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 235
+        width: 26
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6328789661d24074691c94144ab24d8e
+      internalID: -352664542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_67
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 210
+        width: 41
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6d55d33335ccb489dabb6eb8d42040
+      internalID: 251628261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_68
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 263
+        width: 69
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8cff35ec94e2e24b8928ca79118a4ee
+      internalID: 1723556565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_69
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 187
+        width: 67
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802e138f63ad65542a9ea0dca5e8338c
+      internalID: -228535986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_70
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 212
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a36c0132fa0de3418fbfb8edb7ae153
+      internalID: 1900549288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_71
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 34
+        width: 143
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa7102cc0a686844a365318269d0120
+      internalID: 1875906718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_72
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 32
+        width: 106
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf95aacff7ff5f14ab444a8f6bf66736
+      internalID: -1493487233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_73
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 24
+        width: 114
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f63365ca16a6b459c56f9e0ef05007
+      internalID: -2120357435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_74
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 146
+        width: 51
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9202fffecb350914a8303a5e3ea02531
+      internalID: 647799536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_75
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 146
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9dd5c5818035b4bb605399b75992e2
+      internalID: -1497658232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_76
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 146
+        width: 52
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74b9efb70427b9439bc0ea0820bcb14
+      internalID: 1827033209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_77
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 27
+        width: 114
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18162a724874b794ba71f67760fd2be8
+      internalID: 928191040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_78
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 92
+        width: 137
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97eb9371df340541b5a5df3d1b0c00d
+      internalID: 1990973766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_79
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 29
+        width: 124
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 812a3ae9d7988d74f895f5a13ebca798
+      internalID: 253519829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ListSymbol_80
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 53
+        width: 132
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4058d334bd2f7084b81f758bce4651ca
+      internalID: 1218153700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ListSymbol_0: 1176976641
+      ListSymbol_1: -1922342595
+      ListSymbol_10: -1348848422
+      ListSymbol_11: -349604046
+      ListSymbol_12: -672627046
+      ListSymbol_13: -1359762881
+      ListSymbol_14: -1469836726
+      ListSymbol_15: 836891832
+      ListSymbol_16: -306171763
+      ListSymbol_17: -1715049646
+      ListSymbol_18: 1985539919
+      ListSymbol_19: -496437794
+      ListSymbol_2: -320807199
+      ListSymbol_20: -1981042282
+      ListSymbol_21: -1385265191
+      ListSymbol_22: 1369103173
+      ListSymbol_23: -123162822
+      ListSymbol_24: -763967622
+      ListSymbol_25: 1001434323
+      ListSymbol_26: -385067231
+      ListSymbol_27: 1381736694
+      ListSymbol_28: -595615753
+      ListSymbol_29: -1141538585
+      ListSymbol_3: -749984345
+      ListSymbol_30: 621337973
+      ListSymbol_31: 898673588
+      ListSymbol_32: -501386529
+      ListSymbol_33: -1154976730
+      ListSymbol_34: 907252994
+      ListSymbol_35: -1844183053
+      ListSymbol_36: -530100983
+      ListSymbol_37: -1747180225
+      ListSymbol_38: 442545347
+      ListSymbol_39: 1270584686
+      ListSymbol_4: 2106547930
+      ListSymbol_40: 1334360043
+      ListSymbol_41: -481642109
+      ListSymbol_42: 1504603828
+      ListSymbol_43: -175694668
+      ListSymbol_44: -29139879
+      ListSymbol_45: 1585517636
+      ListSymbol_46: 1375280558
+      ListSymbol_47: 639901351
+      ListSymbol_48: 564950871
+      ListSymbol_49: -1994288562
+      ListSymbol_5: 1320575363
+      ListSymbol_50: -832269583
+      ListSymbol_51: -1002359703
+      ListSymbol_52: -833166268
+      ListSymbol_53: -1999644864
+      ListSymbol_54: -350549886
+      ListSymbol_55: 51764638
+      ListSymbol_56: 1584281712
+      ListSymbol_57: 665356835
+      ListSymbol_58: -581795543
+      ListSymbol_59: 822952665
+      ListSymbol_6: -1897391935
+      ListSymbol_60: 234493105
+      ListSymbol_61: -296362190
+      ListSymbol_62: -1891551482
+      ListSymbol_63: -1850780229
+      ListSymbol_64: -1558604443
+      ListSymbol_65: 269328819
+      ListSymbol_66: -352664542
+      ListSymbol_67: 251628261
+      ListSymbol_68: 1723556565
+      ListSymbol_69: -228535986
+      ListSymbol_7: 1339570568
+      ListSymbol_70: 1900549288
+      ListSymbol_71: 1875906718
+      ListSymbol_72: -1493487233
+      ListSymbol_73: -2120357435
+      ListSymbol_74: 647799536
+      ListSymbol_75: -1497658232
+      ListSymbol_76: 1827033209
+      ListSymbol_77: 928191040
+      ListSymbol_78: 1990973766
+      ListSymbol_79: 253519829
+      ListSymbol_8: -1878954715
+      ListSymbol_80: 1218153700
+      ListSymbol_9: 507015557
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
