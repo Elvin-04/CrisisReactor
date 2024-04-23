@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class O_MoveOnde : MonoBehaviour
 {
@@ -14,10 +15,12 @@ public class O_MoveOnde : MonoBehaviour
 
     [SerializeField] private GameObject button1;
     [SerializeField] private GameObject button2;
+    [SerializeField] private MG_SoundManager soundManager;
 
     private void Start()
     {
         indexMove = onde.Count - 1;
+        soundManager.PlaySound(2);
     }
     void FixedUpdate()
     {
@@ -26,6 +29,7 @@ public class O_MoveOnde : MonoBehaviour
             Move();
         }
     }
+
 
     private void Move()
     {
@@ -69,8 +73,21 @@ public class O_MoveOnde : MonoBehaviour
     IEnumerator StopMoving(float second)
     {
         yield return new WaitForSeconds(second);
-        canMove = false;
-        button1.SetActive(true);
-        button2.SetActive(true);
+        if (Mathf.Abs(ondes.transform.localScale.x - O_PaternOnde.scaleX) < 0.75 && Mathf.Abs(ondes.transform.localScale.y - O_PaternOnde.scaleY) < 0.5)
+        {
+            canMove = false;
+            soundManager.PlaySound(0);
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene("Lobby");
+            print("Win");
+        }
+        else
+        {
+            soundManager.PlaySound(1);
+            canMove = false;
+            button1.SetActive(true);
+            button2.SetActive(true);
+            LOB_Timer.instance.RemoveTimer(20);
+        }
     }
 }
