@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +20,7 @@ public class LOB_Timer : MonoBehaviour
     [SerializeField] private int digicodeSpawnCount;
     private List<float> timeCodeDigicode = new List<float>();
     private int currentIndex;
+    public List<string> timerScene;
 
     private void Awake()
     {
@@ -86,7 +86,8 @@ public class LOB_Timer : MonoBehaviour
             GetComponent<AudioSource>().Play();
         }
 
-        if(timeCodeDigicode.Contains((int)currentTime))
+
+        if(timeCodeDigicode.Contains((int)currentTime) && timerScene.Contains(SceneManager.GetActiveScene().name) && GameObject.FindGameObjectWithTag("Timer") == null)
         {
             if (currentIndex + 1 < digicodeSpawnCount)
                 currentIndex++;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MultiSceneManager
   - soundManager
+  - Timer
   layers:
   - Default
   - TransparentFX

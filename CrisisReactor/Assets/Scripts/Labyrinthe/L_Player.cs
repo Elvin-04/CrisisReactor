@@ -10,6 +10,7 @@ public class L_Player : MonoBehaviour
     private int initCase;
     [SerializeField] private int lenght;
     private MG_SoundManager soundManager;
+    private bool win;
 
     private void Start()
     {
@@ -18,24 +19,27 @@ public class L_Player : MonoBehaviour
     }
     public void Move(string direction)
     {
-        soundManager.PlaySound(0);
-        switch (direction)
+        if (!win)
         {
-            case "Up":
-                SetColor(cases[currentCase].canGoUp, -lenght);
-                break;
-            case "Down":
-                SetColor(cases[currentCase].canGoDown, lenght);
-                break;
-            case "Left":
-                SetColor(cases[currentCase].canGoLeft, -1);
-                break;
-            case "Right":
-                SetColor(cases[currentCase].canGoRight, 1);
-                break;
-            default:
-                print("No direction");
-                break;
+            soundManager.PlaySound(0);
+            switch (direction)
+            {
+                case "Up":
+                    SetColor(cases[currentCase].canGoUp, -lenght);
+                    break;
+                case "Down":
+                    SetColor(cases[currentCase].canGoDown, lenght);
+                    break;
+                case "Left":
+                    SetColor(cases[currentCase].canGoLeft, -1);
+                    break;
+                case "Right":
+                    SetColor(cases[currentCase].canGoRight, 1);
+                    break;
+                default:
+                    print("No direction");
+                    break;
+            }
         }
     }
 
@@ -60,6 +64,7 @@ public class L_Player : MonoBehaviour
         {
             soundManager.PlaySound(1);
             Invoke("OnVictory", 1.10f);
+            win = true;
         }
     }
 
@@ -82,7 +87,10 @@ public class L_Player : MonoBehaviour
 
     public void Update()
     {
-        MoveWithArrow();
+        if (!win)
+        {
+            MoveWithArrow();
+        }
     }
 
     public void MoveWithArrow()
