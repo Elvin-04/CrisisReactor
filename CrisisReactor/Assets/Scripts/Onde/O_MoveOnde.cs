@@ -75,6 +75,7 @@ public class O_MoveOnde : MonoBehaviour
         if (Mathf.Abs(ondes.transform.localScale.x - O_PaternOnde.scaleX) < 0.75 && Mathf.Abs(ondes.transform.localScale.y - O_PaternOnde.scaleY) < 0.5)
         {
             canMove = false;
+            PlayerPrefs.SetInt("MiniGame7", 1);
             soundManager.PlaySound(0);
             yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("Lobby");
