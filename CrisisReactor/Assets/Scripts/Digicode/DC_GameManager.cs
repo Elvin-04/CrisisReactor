@@ -7,8 +7,10 @@ public class DC_GameManager : MonoBehaviour
 {
     private string enteredCode;
     private string waitedCode;
+    private string seriesNumber;
     [SerializeField] private TextMeshProUGUI enteredCodeText;
     [SerializeField] private MG_SoundManager soundManager;
+    [SerializeField] private TextMeshProUGUI SeriesNumberText;
 
     void OnEnable()
     {
@@ -19,6 +21,8 @@ public class DC_GameManager : MonoBehaviour
     {
         int randomizedIndex = Random.Range(0, DC_DigicodeCodesList.correctCodes.Count - 1);
         waitedCode = DC_DigicodeCodesList.correctCodes[randomizedIndex];
+        seriesNumber = DC_DigicodeCodesList.SeriesNumber[waitedCode];
+        SeriesNumberText.text = seriesNumber;
         Debug.Log("good code = " + waitedCode);
     }
 

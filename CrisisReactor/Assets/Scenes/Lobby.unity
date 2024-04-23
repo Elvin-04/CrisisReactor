@@ -1340,6 +1340,15 @@ MonoBehaviour:
   endGame: 0
   digicodePrefab: {fileID: 7999890259247691018, guid: 667fda815c226e6448cbddca5abb7738, type: 3}
   digicodeSpawnCount: 2
+  timerScene:
+  - MultiSceneManager
+  - Digicode
+  - Lobby
+  - Lucas_D_Labyrinthe
+  - Lucas_D_Symbol
+  - Lucas_D_Wire
+  - MorseGame
+  - TESTS_LucasD
 --- !u!4 &1614951865
 Transform:
   m_ObjectHideFlags: 0
