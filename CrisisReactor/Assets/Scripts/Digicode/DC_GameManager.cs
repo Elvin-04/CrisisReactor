@@ -1,7 +1,5 @@
 using TMPro;
-using TreeEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DC_GameManager : MonoBehaviour
 {
