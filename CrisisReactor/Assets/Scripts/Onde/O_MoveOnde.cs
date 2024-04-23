@@ -20,7 +20,6 @@ public class O_MoveOnde : MonoBehaviour
     private void Start()
     {
         indexMove = onde.Count - 1;
-        soundManager.PlaySound(2);
     }
     void FixedUpdate()
     {
