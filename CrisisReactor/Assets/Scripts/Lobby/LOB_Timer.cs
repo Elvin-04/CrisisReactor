@@ -87,7 +87,8 @@ public class LOB_Timer : MonoBehaviour
         }
 
 
-        if(timeCodeDigicode.Contains((int)currentTime) && timerScene.Contains(SceneManager.GetActiveScene().name) && GameObject.FindGameObjectWithTag("Timer") == null)
+        if(timeCodeDigicode.Contains((int)currentTime) && timerScene.Contains(SceneManager.GetActiveScene().name) && GameObject.FindGameObjectWithTag("Timer") == null
+            && TouchScreenKeyboard.visible == false)
         {
             if (currentIndex + 1 < digicodeSpawnCount)
                 currentIndex++;

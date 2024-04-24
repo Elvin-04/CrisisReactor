@@ -47,6 +47,7 @@ public class MG_GameManager : MonoBehaviour
         StartCoroutine(ExecuteMorse());
     }
 
+
     public void ConfirmWord(string _commitedWord)
     {
         CheckWord(_commitedWord);

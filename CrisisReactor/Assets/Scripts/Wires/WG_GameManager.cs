@@ -11,12 +11,16 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     [HideInInspector] public bool isConnect;
     private MG_SoundManager soundManager;
 
+    private InstantiatePrefab mousePosScript;
+
     private void Start()
     { 
         sizeXWire = gameObject.GetComponent<RectTransform>().sizeDelta.x;
         initPos = new Vector3(transform.position.x - sizeXWire / 2, transform.position.y, transform.position.z);
         distEndPos = endPos.GetComponent<RectTransform>().sizeDelta.x;
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
+
+        mousePosScript = GameObject.Find("WGM_GameManager").GetComponent<InstantiatePrefab>();
     }
 
     /// 
@@ -30,13 +34,13 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Dragging");
-        SetPosImage(Input.mousePosition);
+        SetPosImage(mousePosScript.mousePosition);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("EndDrag");
-        if (Vector3.Distance(Input.mousePosition, endPos.transform.position) > distEndPos)
+        if (Vector3.Distance(mousePosScript.mousePosition, endPos.transform.position) > distEndPos)
         {
             ResetPos();
             soundManager.PlaySound(2);
