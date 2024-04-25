@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class O_MoveOnde : MonoBehaviour
@@ -16,6 +17,19 @@ public class O_MoveOnde : MonoBehaviour
     [SerializeField] private GameObject button1;
     [SerializeField] private GameObject button2;
     [SerializeField] private MG_SoundManager soundManager;
+
+    public static O_MoveOnde instance;
+    public Vector2 mousePosition;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public void SetMousePosition(InputAction.CallbackContext context)
+    {
+        mousePosition = context.ReadValue<Vector2>();
+    }
 
     private void Start()
     {

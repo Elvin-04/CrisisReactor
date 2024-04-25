@@ -13,7 +13,8 @@ public class O_ChangeLengthOnde : MonoBehaviour, IBeginDragHandler, IDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Dragging");
-        Vector3 dir = Input.mousePosition - gameObject.transform.position;
+        Vector3 mousePos = O_MoveOnde.instance.mousePosition;
+        Vector3 dir = mousePos - gameObject.transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         gameObject.transform.rotation = Quaternion.AngleAxis(angle, new Vector3(0, gameObject.transform.rotation.y, 1));
         if (gameObject.transform.eulerAngles.z > 180)

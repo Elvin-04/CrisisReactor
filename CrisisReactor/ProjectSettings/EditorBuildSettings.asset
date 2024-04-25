@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lucas_D_Symbol.unity
     guid: 667bdfccaa1c836449d451eb7f8d069c
+  - enabled: 1
+    path: Assets/Scenes/Lucas_D_Onde.unity
+    guid: 17b739e54021e88409de2b401550ae29
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: dc32bdf40e29e0d41b5fca99ba19daed, type: 2}

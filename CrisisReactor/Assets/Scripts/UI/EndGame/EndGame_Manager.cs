@@ -16,6 +16,12 @@ public class EndGame_Manager : MonoBehaviour
         {
             textEndGame.text = "Defeat";
         }
+
+        GameObject[] getBackButtonCanvas = GameObject.FindGameObjectsWithTag("BackButtonCanvas");
+        foreach (GameObject go in getBackButtonCanvas)
+        {
+            go.SetActive(false);
+        }
     }
     public void Restart()
     {

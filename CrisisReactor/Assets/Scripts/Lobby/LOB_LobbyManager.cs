@@ -20,6 +20,10 @@ public class LOB_LobbyManager : MonoBehaviour
     private bool zoom = false;
     private bool cancelZoom = false;
 
+    [SerializeField] private MiniGameLobbyManager miniGameLobbyManager;
+
+    
+
 
     private void Awake()
     {
@@ -29,12 +33,19 @@ public class LOB_LobbyManager : MonoBehaviour
         initCameraSize = mainCamera.orthographicSize;
 
         canvas = GameObject.Find("Canvas");
+
     }
 
     private void Start()
     {
         if(PlayerPrefs.GetInt("Zoom") == 1)
             CancelZoom();
+
+        GameObject[] getBackButtonCanvas = GameObject.FindGameObjectsWithTag("BackButtonCanvas");
+        foreach(GameObject go in getBackButtonCanvas)
+        {
+            go.SetActive(false);
+        }
     }
 
 
@@ -55,6 +66,18 @@ public class LOB_LobbyManager : MonoBehaviour
                 PlayerPrefs.SetFloat("CamPosX", cameraPositionDestination.x);
                 PlayerPrefs.SetFloat("CamPosY", cameraPositionDestination.y);
                 PlayerPrefs.SetFloat("CamSize", cameraSizeDestination);
+
+                if(miniGameLobbyManager != null && !cancelZoom && !zoom)
+                {
+                    miniGameLobbyManager.backCanvas.SetActive(true);
+                }
+                    
+                else
+                {
+                    miniGameLobbyManager = GameObject.Find("MultiSceneManager").GetComponent<MiniGameLobbyManager>();
+                    miniGameLobbyManager.backCanvas.SetActive(true);
+                }
+
                 SceneManager.LoadScene(minigameSelected.miniGameScene);
             }
 
