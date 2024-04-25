@@ -6,14 +6,10 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject creditMenu;
-    [SerializeField] private Toggle _toggleFullScreen;
     [SerializeField] private GameObject playPanel;
     [SerializeField] private GameObject mainMenuButton;
 
-    private void Start()
-    {
-        _toggleFullScreen.isOn = Screen.fullScreen;
-    }
+    
 
     public void OpenPlayPanel()
     {
