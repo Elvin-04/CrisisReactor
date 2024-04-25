@@ -17,6 +17,15 @@ public class SetBoolButton : MonoBehaviour
     public static int nbBoolSafe = 0;
     public static int maxBoolSafe;
     private bool canPlay = true;
+    public Sprite spriteYellow;
+    public Sprite spriteRed;
+
+    public static SetBoolButton Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
