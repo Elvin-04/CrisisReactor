@@ -11,4 +11,9 @@ public class MiniGameLobbyManager : MonoBehaviour
             SceneManager.LoadScene("Lobby");
         }
     }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

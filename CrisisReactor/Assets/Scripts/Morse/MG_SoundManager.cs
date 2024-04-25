@@ -1,7 +1,6 @@
 using UnityEngine;
 
 
-//just used to play morse sound
 public class MG_SoundManager : MonoBehaviour
 {
     [SerializeField] private AudioClip[] sounds;
@@ -13,8 +12,8 @@ public class MG_SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlaySound()
+    public void PlaySound(int soundIndex)
     {
-        audioSource.PlayOneShot(sounds[0]);
+        audioSource.PlayOneShot(sounds[soundIndex]);
     }
 }
