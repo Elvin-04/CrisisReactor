@@ -19,7 +19,7 @@ public class MiniGameLobbyManager : MonoBehaviour
 
     public void LeaveMiniGame(InputAction.CallbackContext context)
     {
-        if(context.performed && SceneManager.GetActiveScene().name != "Lobby")
+        if(context.performed && SceneManager.GetActiveScene().name != "Lobby" && GameObject.Find("UI_UniversalDigicode(Clone)") == null)
         {
             LeaveMiniGame();
         }
