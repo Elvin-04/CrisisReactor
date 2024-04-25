@@ -7,11 +7,26 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject creditMenu;
     [SerializeField] private Toggle _toggleFullScreen;
+    [SerializeField] private GameObject playPanel;
+    [SerializeField] private GameObject mainMenuButton;
 
     private void Start()
     {
         _toggleFullScreen.isOn = Screen.fullScreen;
     }
+
+    public void OpenPlayPanel()
+    {
+        playPanel.SetActive(true);
+        mainMenuButton.SetActive(false);
+    }
+
+    public void BackMainMenu()
+    {
+        playPanel.SetActive(false);
+        mainMenuButton.SetActive(true);
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("Lobby");
@@ -39,5 +54,10 @@ public class MenuManager : MonoBehaviour
     public void SetFullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
+    }
+
+    public void OpenLink(string link)
+    {
+        Application.OpenURL(link);
     }
 }
