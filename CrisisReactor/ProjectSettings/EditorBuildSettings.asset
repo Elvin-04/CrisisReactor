@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lucas_D_Symbol.unity
     guid: 667bdfccaa1c836449d451eb7f8d069c
+  - enabled: 1
+    path: Assets/Scenes/AtomsIO.unity
+    guid: fe613c422d14cdb4097813038d964a79
   m_configObjects: {}
