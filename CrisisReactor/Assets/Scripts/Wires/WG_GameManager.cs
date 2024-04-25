@@ -1,6 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -10,13 +12,21 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private float distEndPos;
     [HideInInspector] public bool isConnect;
     private MG_SoundManager soundManager;
+    [SerializeField] private ParticleSystem particleSpark;
+    [SerializeField] private Camera mainCamera;
 
     private void Start()
     { 
         sizeXWire = gameObject.GetComponent<RectTransform>().sizeDelta.x;
-        initPos = new Vector3(transform.position.x - sizeXWire / 2, transform.position.y, transform.position.z);
+        initPos = mainCamera.WorldToScreenPoint(transform.position) - new Vector3(sizeXWire / 2, 0, 0);
+        print(initPos);
         distEndPos = endPos.GetComponent<RectTransform>().sizeDelta.x;
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
+        StartCoroutine(StartParticle());
+        if (Random.Range(0,3) == 0)
+        {
+            particleSpark.Play();
+        }
     }
 
     /// 
@@ -36,7 +46,7 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("EndDrag");
-        if (Vector3.Distance(Input.mousePosition, endPos.transform.position) > distEndPos)
+        if (Vector3.Distance(Input.mousePosition + new Vector3(0, 0, 100), mainCamera.WorldToScreenPoint(endPos.transform.position)) > distEndPos)
         {
             ResetPos();
             soundManager.PlaySound(2);
@@ -46,10 +56,11 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         }
         else
         {
-            SetPosImage(endPos.transform.position);
+            SetPosImage(mainCamera.WorldToScreenPoint(endPos.transform.position));
             soundManager.PlaySound(1);
             Debug.Log("Success");
-
+            StopAllCoroutines();
+            particleSpark.Stop();
             isConnect = true;
             if (CheckWinWire.Instance.CheckWin())
             {
@@ -63,20 +74,27 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     ////
     private void ResetPos()
     {
-        transform.position = initPos + new Vector3(sizeXWire / 2, 0, 0);
+        transform.position = mainCamera.ScreenToWorldPoint(initPos + new Vector3(sizeXWire / 2, 0, 0));
         transform.localScale = Vector3.one;
         transform.eulerAngles = Vector3.zero;
+    }
+
+    IEnumerator StartParticle()
+    {
+        yield return new WaitForSeconds(Random.Range(3, 6));
+        particleSpark.Play();
+        StartCoroutine(StartParticle());
     }
 
     private void SetPosImage(Vector3 pos)
     {
         //Set position and scale
-        gameObject.transform.localScale = new Vector3(Vector3.Distance(pos, initPos) / sizeXWire, 1, 1);
+        gameObject.transform.localScale = new Vector3(Vector3.Distance(pos + new Vector3(0,0,100), initPos) / sizeXWire, 1, 1);
         Vector3 newPos = (pos - initPos) / 2 + initPos;
-        transform.position = newPos;
+        transform.position = mainCamera.ScreenToWorldPoint(newPos);
 
         //Rotate
-        Vector3 dir = pos - gameObject.transform.position;
+        Vector3 dir = pos - mainCamera.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         gameObject.transform.rotation = Quaternion.AngleAxis(angle, new Vector3(0, gameObject.transform.rotation.y, 1));
     }
