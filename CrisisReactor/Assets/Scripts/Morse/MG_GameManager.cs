@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +9,9 @@ using UnityEngine.SceneManagement;
 public class MG_GameManager : MonoBehaviour
 {
 
-    [SerializeField] private Image tempoCircle;
+    [SerializeField] private GameObject tempoCircle;
+    [SerializeField] private GameObject tempoCircleGray;
+    [SerializeField] private GameObject soundIcon;
     [SerializeField] private MG_SoundManager soundManager;
     private Animator animator;
     private string waitedWord;
@@ -82,8 +83,9 @@ public class MG_GameManager : MonoBehaviour
                     foreach (char morseChar in morseSequence)
                     {
                         float duration = (morseChar == '.') ? 0.2f : 1.5f;
-                        ChangeSpriteColor(Color.white);
-                        if(duration == 0.2f)
+                        tempoCircle.gameObject.SetActive(true);
+                        soundIcon.gameObject.SetActive(true);
+                        if (duration == 0.2f)
                         {
                             soundManager.PlaySound(5);
                         }
@@ -92,21 +94,17 @@ public class MG_GameManager : MonoBehaviour
                             soundManager.PlaySound(6);
                         }
                         yield return new WaitForSeconds(duration);
-                        ChangeSpriteColor(Color.black);
+                        soundIcon.gameObject.SetActive(false);
+                        tempoCircle.gameObject.SetActive(false);
                         
                         yield return new WaitForSeconds(0.5f);
                     }
                     yield return new WaitForSeconds(3f);
                 }
             }
-            ChangeSpriteColor(Color.red);
+            tempoCircleGray.gameObject.SetActive(true);
             yield return new WaitForSeconds(5f);
+            tempoCircleGray.gameObject.SetActive(false);
         }
     }
-
-    void ChangeSpriteColor(Color _color)
-    {
-        tempoCircle.color = _color;
-    }
-
 }

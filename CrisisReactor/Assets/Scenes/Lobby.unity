@@ -283,18 +283,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387973867}
-  m_LocalRotation: {x: 0.44765157, y: 0.10340134, z: -0.052891165, w: 0.8866334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1324695387}
   m_Father: {fileID: 1642248245}
-  m_LocalEulerAnglesHint: {x: 53.586, y: 13.245, z: -0.117}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179.14008, y: -202.19998}
-  m_SizeDelta: {x: 328.81, y: 231.36}
+  m_AnchoredPosition: {x: 26.9, y: 0}
+  m_SizeDelta: {x: 328.81, y: 247.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &387973869
 MonoBehaviour:
@@ -598,7 +598,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -100
-  m_Sprite: {fileID: 21300000, guid: a3565637f3378ec4f8435626e300b6d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74166ddd2e8527c4ebc736ce907abc14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1149,17 +1149,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045222637}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.5392909, y: 0.10516341, z: -0.07038395, w: 0.8325576}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1123346181}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 65.893, y: 14.055, z: -0.529}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.63, y: -3.1}
-  m_SizeDelta: {x: 366.84, y: 197.69}
+  m_AnchoredPosition: {x: -15.690002, y: -3.600006}
+  m_SizeDelta: {x: 490.19, y: 428.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1045222639
 MonoBehaviour:
@@ -1235,8 +1235,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -527.47, y: 213.97}
-  m_SizeDelta: {x: 323.38, y: 175.93}
+  m_AnchoredPosition: {x: -623.24, y: -372.68}
+  m_SizeDelta: {x: 459.11, y: 173.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1123346182
 MonoBehaviour:
@@ -1659,6 +1659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1448762663}
   - component: {fileID: 1448762662}
+  - component: {fileID: 1448762664}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1743,6 +1744,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1448762664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448762661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1614951863
 GameObject:
   m_ObjectHideFlags: 0
