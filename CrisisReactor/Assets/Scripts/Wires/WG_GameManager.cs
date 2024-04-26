@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -82,6 +81,8 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     IEnumerator StartParticle()
     {
         yield return new WaitForSeconds(Random.Range(3, 6));
+        if (Random.Range(0,3) == 0)
+            soundManager.PlaySound(3);
         particleSpark.Play();
         StartCoroutine(StartParticle());
     }
