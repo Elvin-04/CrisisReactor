@@ -81,8 +81,8 @@ public class MG_GameManager : MonoBehaviour
                     foreach (char morseChar in morseSequence)
                     {
                         float duration = (morseChar == '.') ? 0.2f : 1.5f;
-                        ChangeSpriteColor(Color.white);
-                        if(duration == 0.2f)
+                        tempoCircle.gameObject.SetActive(true);
+                        if (duration == 0.2f)
                         {
                             soundManager.PlaySound(5);
                         }
@@ -91,21 +91,15 @@ public class MG_GameManager : MonoBehaviour
                             soundManager.PlaySound(6);
                         }
                         yield return new WaitForSeconds(duration);
-                        ChangeSpriteColor(Color.black);
+                        tempoCircle.gameObject.SetActive(false);
                         
                         yield return new WaitForSeconds(0.5f);
                     }
                     yield return new WaitForSeconds(3f);
                 }
             }
-            ChangeSpriteColor(Color.red);
+            //ChangeSpriteColor(Color.red);
             yield return new WaitForSeconds(5f);
         }
     }
-
-    void ChangeSpriteColor(Color _color)
-    {
-        tempoCircle.color = _color;
-    }
-
 }
