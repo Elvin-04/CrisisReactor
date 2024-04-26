@@ -62,7 +62,6 @@ public class L_Player : MonoBehaviour
     {
         if (cases[currentCase].isEndCase)
         {
-            cases[currentCase].gameObject.GetComponent<Image>().color = Color.green;
             soundManager.PlaySound(1);
             Invoke("OnVictory", 1.10f);
             win = true;
