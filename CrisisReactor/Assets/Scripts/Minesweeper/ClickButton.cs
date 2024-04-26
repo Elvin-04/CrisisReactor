@@ -36,14 +36,23 @@ public class ClickButton : MonoBehaviour
                 gameObject.GetComponent<Image>().sprite = SetBoolButton.Instance.spriteYellow;
                 gameObject.GetComponent<Button>().interactable = false;
                 SetBoolButton.nbBoolSafe++;
-                soundManager.PlaySound(0);
+                
                 if (SetBoolButton.nbBoolSafe >= SetBoolButton.maxBoolSafe)
                 {
                     SetBoolButton.nbBoolSafe = 0;
-                    SceneManager.LoadScene("Lobby");
-                    PlayerPrefs.SetInt("MiniGame2", 1);
-                    print("Win");
+                    soundManager.PlaySound(2);
+                    Invoke("OnVictory", 1.10f);
+                }
+                else
+                {
+                    soundManager.PlaySound(0);
                 }
             }
+    }
+    private void OnVictory()
+    {
+        PlayerPrefs.SetInt("MiniGame2", 1);
+        SceneManager.LoadScene("Lobby");
+        Debug.Log("Win");
     }
 }

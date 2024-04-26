@@ -63,9 +63,8 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             isConnect = true;
             if (CheckWinWire.Instance.CheckWin())
             {
-                Debug.Log("Win");
-                PlayerPrefs.SetInt("MiniGame3", 1);
-                SceneManager.LoadScene("Lobby");
+                Invoke("StartSound", 0.5f);
+                Invoke("OnVictory", 1.60f);
             }
         }
     }
@@ -98,5 +97,16 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         Vector3 dir = pos - mainCamera.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         gameObject.transform.rotation = Quaternion.AngleAxis(angle, new Vector3(0, gameObject.transform.rotation.y, 1));
+    }
+    private void OnVictory()
+    {
+        PlayerPrefs.SetInt("MiniGame3", 1);
+        SceneManager.LoadScene("Lobby");
+        Debug.Log("Win");
+    }
+
+    private void StartSound()
+    {
+        soundManager.PlaySound(4);
     }
 }
