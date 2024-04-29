@@ -1,14 +1,36 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LOB_Timer : MonoBehaviour
 {
     [Header("Timer")]
-    [SerializeField] private float totalTime = 300;
-    [SerializeField] private float currentTime = 300;
+    public float totalTime = 300;
+    public float currentTime = 300;
     [SerializeField] private TextMeshProUGUI timerText;
     [HideInInspector] public int value = 0;
     int currentTimeInt;
+    [HideInInspector] public bool endGame;
+
+    public static LOB_Timer instance;
+
+    [Header("DigiCode")]
+    public GameObject digicodePrefab;
+    [SerializeField] private int digicodeSpawnCount;
+    private List<float> timeCodeDigicode = new List<float>();
+    private int currentIndex;
+    public List<string> timerScene;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+
+    }
 
 
     //Create DontDestroyOnLoad scene 
@@ -19,7 +41,15 @@ public class LOB_Timer : MonoBehaviour
         if(multiScene.Length <= 1)
         {
             DontDestroyOnLoad(gameObject);
-            value = 1; 
+            value = 1;
+
+            for (int i = 0; i < digicodeSpawnCount; i++)
+            {
+                timeCodeDigicode.Add((int)Random.Range(30, totalTime - 15f));
+                Debug.Log(timeCodeDigicode[i]);
+            }
+
+            currentIndex = 0;
         }
         else
         {
@@ -40,7 +70,8 @@ public class LOB_Timer : MonoBehaviour
     private void FixedUpdate()
     {
         //Update the timer variable
-        currentTime -= Time.unscaledDeltaTime;
+        if (currentTime > 0)
+            currentTime -= Time.unscaledDeltaTime;
         //Update and set the time text on screen
         if (timerText != null)
             timerText.text = ((int)currentTime / 60).ToString("00") + ":" + ((int)currentTime % 60).ToString("00");
@@ -55,13 +86,32 @@ public class LOB_Timer : MonoBehaviour
             GetComponent<AudioSource>().Play();
         }
 
-        //Loose condition
-        if(currentTime <= 0)
+
+        if(timeCodeDigicode.Contains((int)currentTime) && timerScene.Contains(SceneManager.GetActiveScene().name) && GameObject.FindGameObjectWithTag("Timer") == null)
         {
-            Debug.Log("Loose");
-            //Play anim or sounds here
+            if (currentIndex + 1 < digicodeSpawnCount)
+                currentIndex++;
+            else
+                currentIndex = 0;
+            Instantiate(digicodePrefab);
+            timeCodeDigicode.Remove((int)currentTime);
         }
 
+        //Loose condition
+        if(currentTime <= 0 && !endGame)
+        {
+            currentTime = -1;
+            endGame = true;
+            SceneManager.LoadScene("UIDefeatVictory");
+            //Play anim or sounds here
+        }
+    }
+
+    public void RemoveTimer(float second)
+    {
+        currentTime -= second;
+        if (currentTime < 0)
+            currentTime = 0;
     }
 
 }

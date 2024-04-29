@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class L_Player : MonoBehaviour
@@ -8,30 +9,37 @@ public class L_Player : MonoBehaviour
     [SerializeField] private int currentCase;
     private int initCase;
     [SerializeField] private int lenght;
+    private MG_SoundManager soundManager;
+    private bool win;
 
     private void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
         initCase = currentCase;
     }
     public void Move(string direction)
     {
-        switch (direction)
+        if (!win)
         {
-            case "Up":
-                SetColor(cases[currentCase].canGoUp, -lenght);
-                break;
-            case "Down":
-                SetColor(cases[currentCase].canGoDown, lenght);
-                break;
-            case "Left":
-                SetColor(cases[currentCase].canGoLeft, -1);
-                break;
-            case "Right":
-                SetColor(cases[currentCase].canGoRight, 1);
-                break;
-            default:
-                print("No direction");
-                break;
+            soundManager.PlaySound(0);
+            switch (direction)
+            {
+                case "Up":
+                    SetColor(cases[currentCase].canGoUp, -lenght);
+                    break;
+                case "Down":
+                    SetColor(cases[currentCase].canGoDown, lenght);
+                    break;
+                case "Left":
+                    SetColor(cases[currentCase].canGoLeft, -1);
+                    break;
+                case "Right":
+                    SetColor(cases[currentCase].canGoRight, 1);
+                    break;
+                default:
+                    print("No direction");
+                    break;
+            }
         }
     }
 
@@ -39,9 +47,9 @@ public class L_Player : MonoBehaviour
     {
         if (canGo)
         {
-            cases[currentCase].gameObject.GetComponent<Image>().color = Color.gray;
+            cases[currentCase].gameObject.GetComponent<Image>().color -= new Color(0, 0, 0, 1);
             currentCase += addCurrentCase;
-            cases[currentCase].gameObject.GetComponent<Image>().color = Color.green;
+            cases[currentCase].gameObject.GetComponent<Image>().color += new Color(0, 0, 0, 1);
             CheckWin();
         }
         else
@@ -54,21 +62,37 @@ public class L_Player : MonoBehaviour
     {
         if (cases[currentCase].isEndCase)
         {
-            Debug.Log("Win");
+            soundManager.PlaySound(1);
+            Invoke("OnVictory", 1.10f);
+            win = true;
         }
     }
 
+    private void OnVictory()
+    {
+            PlayerPrefs.SetInt("MiniGame1", 1);
+            SceneManager.LoadScene("Lobby");
+            Debug.Log("Win");
+    }
+
+
+    //reset character position
     public void ResetCase()
     {
-        cases[currentCase].gameObject.GetComponent<Image>().color = Color.gray;
+        soundManager.PlaySound(2);
+        cases[currentCase].gameObject.GetComponent<Image>().color -= new Color(0, 0, 0, 1);
         currentCase = initCase;
-        cases[currentCase].gameObject.GetComponent<Image>().color = Color.green;
+        cases[currentCase].gameObject.GetComponent<Image>().color += new Color(0, 0, 0, 1);
         Debug.Log("Dead");
+        LOB_Timer.instance.RemoveTimer(20);
     }
 
     public void Update()
     {
-        MoveWithArrow();
+        if (!win)
+        {
+            MoveWithArrow();
+        }
     }
 
     public void MoveWithArrow()

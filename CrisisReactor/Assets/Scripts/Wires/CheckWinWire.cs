@@ -1,12 +1,25 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckWinWire : MonoBehaviour
 {
-    public static int maxWire;
-    public static int nbWireWonnect;
+    [SerializeField] private List<WG_GameManager> listWG = new();
 
-    public static bool CheckWin()
+    public static CheckWinWire Instance;
+
+    private void Awake()
     {
-        return nbWireWonnect >= maxWire;
+        Instance = this;
+    }
+    public bool CheckWin()
+    {
+        for (int i = 0; i < listWG.Count; i++)
+        {
+            if (!listWG[i].isConnect) 
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

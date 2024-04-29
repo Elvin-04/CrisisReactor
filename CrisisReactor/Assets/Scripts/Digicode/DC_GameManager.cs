@@ -5,9 +5,12 @@ public class DC_GameManager : MonoBehaviour
 {
     private string enteredCode;
     private string waitedCode;
+    private string seriesNumber;
     [SerializeField] private TextMeshProUGUI enteredCodeText;
+    [SerializeField] private MG_SoundManager soundManager;
+    [SerializeField] private TextMeshProUGUI SeriesNumberText;
 
-    void Awake()
+    void OnEnable()
     {
         InitCodeFromPool();
     }
@@ -16,11 +19,14 @@ public class DC_GameManager : MonoBehaviour
     {
         int randomizedIndex = Random.Range(0, DC_DigicodeCodesList.correctCodes.Count - 1);
         waitedCode = DC_DigicodeCodesList.correctCodes[randomizedIndex];
+        seriesNumber = DC_DigicodeCodesList.SeriesNumber[waitedCode];
+        SeriesNumberText.text = seriesNumber;
         Debug.Log("good code = " + waitedCode);
     }
 
     public void enterNumber(int _newNumber)
     {
+        soundManager.PlaySound(0);
         if(enteredCode != null)
         {
             if(enteredCode.Length < 4)
@@ -37,15 +43,25 @@ public class DC_GameManager : MonoBehaviour
 
     }
 
+    private void OnWin()
+    {
+            Debug.Log("winned");
+            DC_DigicodeCodesList.correctCodes.Remove(enteredCode);
+            Destroy(transform.parent.gameObject);
+    }
+
     private void CheckCode()
     {
         if(enteredCode == waitedCode)
         {
-            Debug.Log("winned");
-            DC_DigicodeCodesList.correctCodes.Remove(enteredCode);
+            soundManager.PlaySound(2);
+
+            Invoke("OnWin", 1.25f);
+           
         }
         else
         {
+            soundManager.PlaySound(1);
             Debug.Log("wrong code");
             enteredCode = "";
             UpadteEnteredTextUI();

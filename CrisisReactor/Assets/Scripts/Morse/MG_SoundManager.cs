@@ -1,7 +1,6 @@
 using UnityEngine;
 
 
-//just used to play morse sound
 public class MG_SoundManager : MonoBehaviour
 {
     [SerializeField] private AudioClip[] sounds;

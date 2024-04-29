@@ -2,14 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 
 public class MG_GameManager : MonoBehaviour
 {
 
-    [SerializeField] private Image tempoCircle;
+    [SerializeField] private GameObject tempoCircle;
+    [SerializeField] private GameObject tempoCircleGray;
+    [SerializeField] private GameObject soundIcon;
     [SerializeField] private MG_SoundManager soundManager;
     private Animator animator;
     private string waitedWord;
@@ -25,7 +27,7 @@ public class MG_GameManager : MonoBehaviour
 
     
 
-    void Awake()
+    void Start()
     {
         RandomWord();
     }
@@ -56,10 +58,13 @@ public class MG_GameManager : MonoBehaviour
         if(string.Equals(_commitedWord, waitedWord, StringComparison.OrdinalIgnoreCase))
         {
             Debug.Log("Gagné");
+            PlayerPrefs.SetInt("MiniGame5", 1);
+            SceneManager.LoadScene("Lobby");
         }
         else
         {
             Debug.Log("Perdu");
+            LOB_Timer.instance.RemoveTimer(20);
             soundManager.PlaySound(4);
         }
     }
@@ -76,24 +81,29 @@ public class MG_GameManager : MonoBehaviour
                 {
                     foreach (char morseChar in morseSequence)
                     {
-                        float duration = (morseChar == '.') ? 0.2f : 1f;
-                        ChangeSpriteColor(Color.black);
+                        float duration = (morseChar == '.') ? 0.2f : 1.5f;
+                        tempoCircle.gameObject.SetActive(true);
+                        soundIcon.gameObject.SetActive(true);
+                        if (duration == 0.2f)
+                        {
+                            soundManager.PlaySound(5);
+                        }
+                        else
+                        {
+                            soundManager.PlaySound(6);
+                        }
                         yield return new WaitForSeconds(duration);
-                        ChangeSpriteColor(Color.white);
-                        soundManager.PlaySound(0);
+                        soundIcon.gameObject.SetActive(false);
+                        tempoCircle.gameObject.SetActive(false);
+                        
                         yield return new WaitForSeconds(0.5f);
                     }
-                    yield return new WaitForSeconds(1.5f);
+                    yield return new WaitForSeconds(3f);
                 }
             }
-            ChangeSpriteColor(Color.red);
+            tempoCircleGray.gameObject.SetActive(true);
             yield return new WaitForSeconds(5f);
+            tempoCircleGray.gameObject.SetActive(false);
         }
     }
-
-    void ChangeSpriteColor(Color _color)
-    {
-        tempoCircle.color = _color;
-    }
-
 }

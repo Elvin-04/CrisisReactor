@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -28,7 +29,7 @@ public class AC_GameManager : MonoBehaviour
             height = Random.Range(5, 9);
             gridLayout = GetComponent<GridLayoutGroup>();
 
-            int randomizedWaitedAtom = Random.Range(0, 2);
+            int randomizedWaitedAtom = Random.Range(0, 3);
 
 
             switch (randomizedWaitedAtom)
@@ -72,6 +73,8 @@ public class AC_GameManager : MonoBehaviour
 
             castedCell.InitCell(_cellType);
         }
+
+    //randomize atoms to have the same numbers at each games but not to the same positions
 
     void ShuffleList(List<int> array)
     {
@@ -173,6 +176,8 @@ public class AC_GameManager : MonoBehaviour
 
             if(selectedCell.GetCellType() == waitedAtom)
             {
+                PlayerPrefs.SetInt("MiniGame4", 1);
+                SceneManager.LoadScene("Lobby");
                 Debug.Log("winned");
             }
 
@@ -187,7 +192,6 @@ public class AC_GameManager : MonoBehaviour
 
     private bool CheckForUpgrade(AC_GridCell _cellToUpgrade, AC_GridCell _cellToDestroy)
     {
-        Debug.Log(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position));
         if(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position) < 156f && UpgradeAtoms(_cellToUpgrade.GetCellType(), selectedCell.GetCellType()) != AC_ENUM_Cell.CellType.Black)
         {
             return true;
