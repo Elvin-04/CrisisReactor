@@ -987,6 +987,7 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: a03b24bf126956742b9386bc1a7dd304, type: 3}
   - {fileID: 8300000, guid: ead84eed045113c4cbe75fda26755a1c, type: 3}
+  - {fileID: 8300000, guid: f1fcb22ac6ecf4342ab579c9d3e0d151, type: 3}
 --- !u!1 &642813453
 GameObject:
   m_ObjectHideFlags: 0
