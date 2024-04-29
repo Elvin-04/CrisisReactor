@@ -1637,6 +1637,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1ecbddbb-ef8f-499f-89f3-311ad42c782b
     m_ActionName: ActionMap/Back[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0feeff8e-583a-410a-8444-b6edacfb39f4
+    m_ActionName: ActionMap/PointerMove[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: ActionMap
@@ -1923,6 +1939,7 @@ RectTransform:
   - {fileID: 967283329}
   - {fileID: 1970385521}
   - {fileID: 2017578109}
+  - {fileID: 331502712}
   - {fileID: 1977542345}
   - {fileID: 873181629}
   - {fileID: 387973868}
