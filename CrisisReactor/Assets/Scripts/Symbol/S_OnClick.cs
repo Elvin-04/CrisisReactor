@@ -6,7 +6,6 @@ public class S_OnClick : MonoBehaviour
 {
     public bool isGoodSprite;
     private MG_SoundManager soundManager;
-    [SerializeField] private Image imageLed;
 
     private void Start()
     {
@@ -19,7 +18,7 @@ public class S_OnClick : MonoBehaviour
     {
         if (isGoodSprite)
         {
-            imageLed.color = Color.green;
+            gameObject.GetComponent<Image>().sprite = S_SpriteButton.Instance.goodSprite;
             gameObject.GetComponent<Button>().interactable = false;
             S_GameManager.nbGoodprite--;
             if (S_GameManager.nbGoodprite <= 0 )
@@ -34,7 +33,7 @@ public class S_OnClick : MonoBehaviour
         }
         else
         {
-            imageLed.color = Color.red;
+            gameObject.GetComponent<Image>().sprite = S_SpriteButton.Instance.badSprite;
             soundManager.PlaySound(2);
             LOB_Timer.instance.RemoveTimer(20);
         }
