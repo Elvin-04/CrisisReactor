@@ -47,9 +47,9 @@ public class L_Player : MonoBehaviour
     {
         if (canGo)
         {
-            cases[currentCase].gameObject.GetComponent<Image>().color = Color.gray;
+            cases[currentCase].gameObject.GetComponent<Image>().color -= new Color(0, 0, 0, 1);
             currentCase += addCurrentCase;
-            cases[currentCase].gameObject.GetComponent<Image>().color = Color.green;
+            cases[currentCase].gameObject.GetComponent<Image>().color += new Color(0, 0, 0, 1);
             CheckWin();
         }
         else
@@ -75,12 +75,14 @@ public class L_Player : MonoBehaviour
             Debug.Log("Win");
     }
 
+
+    //reset character position
     public void ResetCase()
     {
         soundManager.PlaySound(2);
-        cases[currentCase].gameObject.GetComponent<Image>().color = Color.gray;
+        cases[currentCase].gameObject.GetComponent<Image>().color -= new Color(0, 0, 0, 1);
         currentCase = initCase;
-        cases[currentCase].gameObject.GetComponent<Image>().color = Color.green;
+        cases[currentCase].gameObject.GetComponent<Image>().color += new Color(0, 0, 0, 1);
         Debug.Log("Dead");
         LOB_Timer.instance.RemoveTimer(20);
     }
