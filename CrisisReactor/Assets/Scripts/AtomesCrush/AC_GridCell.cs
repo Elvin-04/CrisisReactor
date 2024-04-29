@@ -60,35 +60,37 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler
     {
         image = GetComponent<Image>();
         cellType = _cellType;
-        switch (cellType)
-        {
-            case AC_ENUM_Cell.CellType.Red:
-                image.color = Color.red;
-                break;
-            case AC_ENUM_Cell.CellType.Green:
-                image.color = Color.green;
-                break;
-            case AC_ENUM_Cell.CellType.Blue:
-                image.color = Color.blue;
-                break;
-            case AC_ENUM_Cell.CellType.Yellow:
-                image.color = Color.yellow;
-                break;
-            case AC_ENUM_Cell.CellType.White:
-                image.color = Color.white;
-                break;
-            case AC_ENUM_Cell.CellType.Cyan:
-                image.color = Color.cyan;
-                break;
-            case AC_ENUM_Cell.CellType.Magenta:
-                image.color = Color.magenta;
-                break;
-            case AC_ENUM_Cell.CellType.Black:
-                image.color = Color.black;
-                break;
-            default:
-                break;
-        }
+        Sprite[] sprites = gameManager.GetAtomsSpritesTempaltes();
+        image.sprite = sprites[(int)cellType];
+        // switch (cellType)
+        // {
+        //     case AC_ENUM_Cell.CellType.Red:
+        //       // image.color = Color.red;
+        //         break;
+        //     case AC_ENUM_Cell.CellType.Green:
+        //       //  image.color = Color.green;
+        //         break;
+        //     case AC_ENUM_Cell.CellType.Blue:
+        //       //  image.color = Color.blue;
+        //         break;
+        //     case AC_ENUM_Cell.CellType.Yellow:
+        //       // image.color = Color.yellow;
+        //         break;
+        //     case AC_ENUM_Cell.CellType.White:
+        //       //  image.color = Color.white;
+        //         break;
+        //     case AC_ENUM_Cell.CellType.Cyan:
+        //       //  image.color = Color.cyan;
+        //         break;
+        //     case AC_ENUM_Cell.CellType.Magenta:
+        //       // image.color = Color.magenta;
+        //         break;
+        //     case AC_ENUM_Cell.CellType.Black:
+        //       // image.color = Color.black;
+        //         break;
+        //     default:
+        //         break;
+        // }
     }
 
     public void ResetCell()
