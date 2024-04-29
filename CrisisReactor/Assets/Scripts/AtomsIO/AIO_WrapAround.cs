@@ -7,6 +7,7 @@ public class AIO_WrapAround : MonoBehaviour
         WrapAroundScreen();
     }
 
+    //mirror teleport on screen borders
     void WrapAroundScreen()
     {
         Camera mainCamera = Camera.main;

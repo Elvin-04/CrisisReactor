@@ -7,8 +7,10 @@ public class AIO_CharacterController : MonoBehaviour
     [SerializeField] private List<Sprite> characterSprites = new List<Sprite>();
     private Vector3 worldPosition = Vector3.zero;
     private float moveSpeed = 5f;
-    private float rotationSpeed = 200f;
+    private float rotationSpeed = 500f;
     private InputAction action;
+    private Vector3 direction = Vector3.zero;
+    private float distance;
 
     void Start()
     {
@@ -40,13 +42,8 @@ public class AIO_CharacterController : MonoBehaviour
         worldPosition.z = transform.position.z;
     }
 
-    void Update()
+    void Movement()
     {
-        Vector3 direction = worldPosition - transform.position;
-        float distance = direction.magnitude;
-
-        if (distance > 0.01f)
-        {
             direction.Normalize();
 
             transform.position += direction * moveSpeed * Time.deltaTime;
@@ -56,6 +53,17 @@ public class AIO_CharacterController : MonoBehaviour
             Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             transform.position = new Vector3(transform.position.x , transform.position.y, 0f);
+    }
+
+    //direction and movement computing
+    void Update()
+    {
+        direction = worldPosition - transform.position;
+        distance = direction.magnitude;
+
+        if (distance > 0.01f)
+        {
+            Movement();
         }
     }
 }

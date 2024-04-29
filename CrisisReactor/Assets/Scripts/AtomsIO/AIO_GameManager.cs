@@ -15,6 +15,7 @@ public class AIO_GameManager : MonoBehaviour
     private int characterMass;
     private int waitedMass;
 
+    //init game mode
     void Start()
     {
         Cursor.visible = false;
@@ -55,10 +56,10 @@ public class AIO_GameManager : MonoBehaviour
     {
         characterMass += massToAdd;
         currentMassText.text = "Masse : " + characterMass;
-        CheckMassForvictory();
+        CheckMassForVictory();
     }
 
-    void CheckMassForvictory()
+    void CheckMassForVictory()
     {
         Debug.Log("waited mass = " + waitedMass);
         if(characterMass == waitedMass)
@@ -71,6 +72,7 @@ public class AIO_GameManager : MonoBehaviour
         }
     }
 
+    //select spawn translation
     Vector3 GetRandomPositionOutsideScreen()
     {
         Camera mainCamera = Camera.main;
