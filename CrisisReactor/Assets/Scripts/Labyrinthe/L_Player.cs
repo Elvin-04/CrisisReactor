@@ -75,6 +75,8 @@ public class L_Player : MonoBehaviour
             Debug.Log("Win");
     }
 
+
+    //reset character position
     public void ResetCase()
     {
         soundManager.PlaySound(2);

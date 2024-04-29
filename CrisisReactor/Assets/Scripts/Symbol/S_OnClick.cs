@@ -13,6 +13,8 @@ public class S_OnClick : MonoBehaviour
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
     }
 
+    //compare selected symbol with waited symbol
+
     public void OnClick()
     {
         if (isGoodSprite)
