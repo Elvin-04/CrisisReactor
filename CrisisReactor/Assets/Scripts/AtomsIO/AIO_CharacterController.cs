@@ -15,7 +15,7 @@ public class AIO_CharacterController : MonoBehaviour
     void Start()
     {
         PlayerInput playerInput = GameObject.FindGameObjectWithTag("MultiSceneManager").GetComponent<PlayerInput>();
-        action = playerInput.currentActionMap["PointerMove"];
+        action = playerInput.currentActionMap["MousePosition"];
         
         action.performed += OnMove;
     }
