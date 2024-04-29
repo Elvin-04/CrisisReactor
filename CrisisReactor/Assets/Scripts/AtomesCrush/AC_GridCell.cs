@@ -29,7 +29,7 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler
 
     private void OnClick()
     {
-        if(isEnabled)
+        if(isEnabled && gameManager.GetCanPlay())
         {
             if(!isSelected)
             {

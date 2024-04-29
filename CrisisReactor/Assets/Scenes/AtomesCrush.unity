@@ -394,7 +394,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1039594871
 MonoBehaviour:
@@ -466,6 +466,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 19ddae46111abb54788344dbeacff09a, type: 3}
   - {fileID: 8300000, guid: 33511d8fb64b8aa43bce4e2d68055d44, type: 3}
   - {fileID: 8300000, guid: eb4e9256bb4fa804c8f322e3b053209d, type: 3}
+  - {fileID: 8300000, guid: 8d4596b672d395f408bf0220b0e2361e, type: 3}
 --- !u!82 &1039594875
 AudioSource:
   m_ObjectHideFlags: 0

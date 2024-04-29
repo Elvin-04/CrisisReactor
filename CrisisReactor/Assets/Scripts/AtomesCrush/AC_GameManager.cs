@@ -18,6 +18,7 @@ public class AC_GameManager : MonoBehaviour
     [SerializeField] private Image waitedAtomImage;
     [SerializeField] private TextMeshProUGUI waitedAtomText;
     [SerializeField] private Sprite[] atomsSprites;
+    private bool canPlay = true;
 
         public MG_SoundManager GetSoundManager()
         {
@@ -140,20 +141,21 @@ public class AC_GameManager : MonoBehaviour
     }
     public void OnCellClicked(AC_GridCell _cellClicked)
     {
-        
-        selectedCell = _cellClicked;
-
-        foreach (AC_GridCell cell in grid)
+        if(canPlay)
         {
-            if(cell != null)
+            selectedCell = _cellClicked;
+
+            foreach (AC_GridCell cell in grid)
             {
-                if(cell != _cellClicked.gameObject)
+                if(cell != null)
                 {
-                    cell.ResetCell();
+                    if(cell != _cellClicked.gameObject)
+                    {
+                        cell.ResetCell();
+                    }
                 }
             }
-
-        }
+        }   
     }
 
     public void OnCellUnselected()
@@ -166,28 +168,44 @@ public class AC_GameManager : MonoBehaviour
         return selectedCell;
     }
 
+    void OnWin()
+    {
+            PlayerPrefs.SetInt("MiniGame4", 1);
+            SceneManager.LoadScene("Lobby");
+            Debug.Log("winned");
+    }
+
+    public bool GetCanPlay()
+    {
+        return canPlay;
+    }
+
     public void UpgradeCell(AC_GridCell _cellFrom)
     {
-        if(CheckForUpgrade(_cellFrom, selectedCell))
+        if(canPlay)
         {
-            soundManager.PlaySound(5);
-            selectedCell.InitCell(UpgradeAtoms(selectedCell.GetCellType(), _cellFrom.GetCellType()));
-            _cellFrom.InitCell(AC_ENUM_Cell.CellType.White);
-
-            if(selectedCell.GetCellType() == waitedAtom)
+            if(CheckForUpgrade(_cellFrom, selectedCell))
             {
-                PlayerPrefs.SetInt("MiniGame4", 1);
-                SceneManager.LoadScene("Lobby");
-                Debug.Log("winned");
-            }
+                soundManager.PlaySound(5);
+                selectedCell.InitCell(UpgradeAtoms(selectedCell.GetCellType(), _cellFrom.GetCellType()));
+                _cellFrom.InitCell(AC_ENUM_Cell.CellType.White);
 
-            selectedCell.ResetCell();
-            OnCellUnselected();
+                if(selectedCell.GetCellType() == waitedAtom)
+                {
+                    canPlay = false;
+                    soundManager.PlaySound(7);
+                    Invoke("OnWin", 1.75f);
+                }
+
+                selectedCell.ResetCell();
+                OnCellUnselected();
+            }
+            else
+            {
+                soundManager.PlaySound(6);
+            }
         }
-        else
-        {
-            soundManager.PlaySound(6);
-        }
+        
     }
 
     private bool CheckForUpgrade(AC_GridCell _cellToUpgrade, AC_GridCell _cellToDestroy)
