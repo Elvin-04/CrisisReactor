@@ -7,14 +7,16 @@ TagManager:
   - MultiSceneManager
   - soundManager
   - Timer
+  - Atom
+  - GameManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - AtomAttractive
   - Water
   - UI
-  - 
+  - Test
   - 
   - 
   - 

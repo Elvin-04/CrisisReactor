@@ -11,6 +11,7 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler
     private AC_ENUM_Cell.CellType cellType;
     private MG_SoundManager soundManager;
 
+
     public void SetsoundManager(MG_SoundManager _soundManager)
     {
         soundManager = _soundManager;
@@ -25,6 +26,7 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler
     {
         Button button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
+        ResetCell();
     }
 
     private void OnClick()

@@ -29,7 +29,7 @@ public class AC_GameManager : MonoBehaviour
             height = Random.Range(5, 9);
             gridLayout = GetComponent<GridLayoutGroup>();
 
-            int randomizedWaitedAtom = Random.Range(0, 2);
+            int randomizedWaitedAtom = Random.Range(0, 3);
 
 
             switch (randomizedWaitedAtom)
@@ -73,6 +73,8 @@ public class AC_GameManager : MonoBehaviour
 
             castedCell.InitCell(_cellType);
         }
+
+    //randomize atoms to have the same numbers at each games but not to the same positions
 
     void ShuffleList(List<int> array)
     {
