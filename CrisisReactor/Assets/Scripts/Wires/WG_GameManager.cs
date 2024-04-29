@@ -39,13 +39,17 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Dragging");
-        SetPosImage(Input.mousePosition);
+        if (!isConnect)
+        {
+            SetPosImage(Input.mousePosition);
+        }
+        
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("EndDrag");
-        if (Vector3.Distance(Input.mousePosition + new Vector3(0, 0, 100), mainCamera.WorldToScreenPoint(endPos.transform.position)) > distEndPos)
+        if (Vector3.Distance(Input.mousePosition + new Vector3(0, 0, 100), mainCamera.WorldToScreenPoint(endPos.transform.position)) > distEndPos && !isConnect)
         {
             ResetPos();
             soundManager.PlaySound(2);

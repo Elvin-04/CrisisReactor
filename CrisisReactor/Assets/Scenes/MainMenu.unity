@@ -208,7 +208,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 665529904}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: SetFullScreen
         m_Mode: 0
