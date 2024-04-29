@@ -93,7 +93,7 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private void SetPosImage(Vector3 pos)
     {
         //Set position and scale
-        gameObject.transform.localScale = new Vector3(Vector3.Distance(pos + new Vector3(0,0,100), initPos) / sizeXWire, 1, 1);
+        gameObject.transform.localScale = new Vector3(Vector3.Distance(pos + new Vector3(0,0,100), initPos) / sizeXWire / Screen.width * 1920, 1, 1);
         Vector3 newPos = (pos - initPos) / 2 + initPos;
         transform.position = mainCamera.ScreenToWorldPoint(newPos);
 
