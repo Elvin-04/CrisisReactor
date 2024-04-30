@@ -29,6 +29,8 @@ public class EndGame_Manager : MonoBehaviour
         LOB_Timer.instance.currentTime = LOB_Timer.instance.totalTime;
         LOB_Timer.instance.endGame = false;
         SceneManager.LoadScene("MainMenu");
+        int timer = PlayerPrefs.GetInt("Timer");
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("Timer", timer);
     }
 }
