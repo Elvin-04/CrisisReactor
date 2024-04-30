@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class MG_GameManager : MonoBehaviour
@@ -15,6 +16,7 @@ public class MG_GameManager : MonoBehaviour
     [SerializeField] private MG_SoundManager soundManager;
     private Animator animator;
     private string waitedWord;
+    [SerializeField] private Button buttonStart;
 
     //morseCode dictionnary is used to translate from char to morse code
     private Dictionary<char, string> morseCode = new Dictionary<char, string>()
@@ -24,13 +26,6 @@ public class MG_GameManager : MonoBehaviour
         {'1', ".----"},{'2', "..---"},{'3', "...--"},{'4', "....-"},{'5', "....."},{'6', "-...."},{'7', "--..."},{'8', "---.."},
         {'9', "----."}
     };
-
-    
-
-    void Start()
-    {
-        RandomWord();
-    }
 
     private void RandomWord()
     {
@@ -105,5 +100,11 @@ public class MG_GameManager : MonoBehaviour
             yield return new WaitForSeconds(5f);
             tempoCircleGray.gameObject.SetActive(false);
         }
+    }
+
+    public void StartMorse()
+    {
+        RandomWord();
+        buttonStart.interactable = false;
     }
 }

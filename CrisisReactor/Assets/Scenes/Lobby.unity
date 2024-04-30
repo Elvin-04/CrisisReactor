@@ -1818,8 +1818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca8bf8884ebf0a4b86869af08e62e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 300
-  currentTime: 300
+  totalTime: 600
+  currentTime: 600
   timerText: {fileID: 16038711}
   value: 0
   endGame: 0
