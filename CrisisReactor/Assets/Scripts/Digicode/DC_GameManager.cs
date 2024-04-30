@@ -9,6 +9,7 @@ public class DC_GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI enteredCodeText;
     [SerializeField] private MG_SoundManager soundManager;
     [SerializeField] private TextMeshProUGUI SeriesNumberText;
+    private bool canPlay = true;
 
     void OnEnable()
     {
@@ -26,21 +27,23 @@ public class DC_GameManager : MonoBehaviour
 
     public void enterNumber(int _newNumber)
     {
-        soundManager.PlaySound(0);
-        if(enteredCode != null)
+        if(canPlay)
         {
-            if(enteredCode.Length < 4)
+            soundManager.PlaySound(0);
+            if(enteredCode != null)
+            {
+                if(enteredCode.Length < 4)
+                {
+                    enteredCode += _newNumber;
+                    UpadteEnteredTextUI();
+                }
+            }
+            else
             {
                 enteredCode += _newNumber;
                 UpadteEnteredTextUI();
             }
         }
-        else
-        {
-            enteredCode += _newNumber;
-            UpadteEnteredTextUI();
-        }
-
     }
 
     private void OnWin()
@@ -55,7 +58,7 @@ public class DC_GameManager : MonoBehaviour
         if(enteredCode == waitedCode)
         {
             soundManager.PlaySound(2);
-
+            canPlay = false;
             Invoke("OnWin", 1.25f);
            
         }
