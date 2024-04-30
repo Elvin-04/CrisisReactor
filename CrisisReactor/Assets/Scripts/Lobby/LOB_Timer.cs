@@ -83,7 +83,10 @@ public class LOB_Timer : MonoBehaviour
         if(currentTimeInt != (int)currentTime)
         {
             currentTimeInt = (int)currentTime;
-            GetComponent<AudioSource>().Play();
+
+            if(currentTimeInt > 0 && currentTimeInt < totalTime && SceneManager.GetActiveScene().name != "UIDefeatVictory"
+                && SceneManager.GetActiveScene().name != "MainMenu")
+                GetComponent<AudioSource>().Play();
         }
 
 
