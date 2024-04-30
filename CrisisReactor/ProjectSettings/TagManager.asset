@@ -8,6 +8,9 @@ TagManager:
   - soundManager
   - Timer
   - BackButtonCanvas
+  - Atom
+  - GameManager
+  - AtomVFX
   layers:
   - Default
   - TransparentFX
