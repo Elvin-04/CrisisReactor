@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Labyrinthe
   m_EditorClassIdentifier: 
   size: 0.9
-  position: {x: -6, y: -3.5}
+  position: {x: -6.5, y: -3.5}
   miniGameScene: Lucas_D_Labyrinthe
