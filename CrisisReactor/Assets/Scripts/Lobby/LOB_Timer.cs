@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class LOB_Timer : MonoBehaviour
 {
     [Header("Timer")]
-    public float totalTime = 300;
-    public float currentTime = 300;
+    public float totalTime;
+    public float currentTime;
     [SerializeField] private TextMeshProUGUI timerText;
     [HideInInspector] public int value = 0;
     int currentTimeInt;
@@ -36,6 +36,8 @@ public class LOB_Timer : MonoBehaviour
     //Create DontDestroyOnLoad scene 
     private void Start()
     {
+        totalTime = PlayerPrefs.GetInt("Timer");
+        currentTime = totalTime;
         GameObject[] multiScene = GameObject.FindGameObjectsWithTag("MultiSceneManager");
 
         if(multiScene.Length <= 1)

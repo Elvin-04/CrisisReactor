@@ -1,3 +1,6 @@
+using TMPro;
+using TMPro.EditorUtilities;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,10 +12,26 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Toggle _toggleFullScreen;
     [SerializeField] private GameObject playPanel;
     [SerializeField] private GameObject mainMenuButton;
+    [SerializeField] private TMP_Dropdown dropDownDifficulty;
 
     private void Start()
     {
         _toggleFullScreen.isOn = Screen.fullScreen;
+        switch (PlayerPrefs.GetInt("Timer"))
+        {
+            case 300:
+                dropDownDifficulty.value = 2;
+                break;
+            case 600:
+                dropDownDifficulty.value = 0;
+                break;
+            case 450:
+                dropDownDifficulty.value = 1;
+                break;
+            case 0:
+                dropDownDifficulty.value = 1;
+                break;
+        }
     }
 
     public void OpenPlayPanel()
@@ -29,6 +48,25 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        switch (dropDownDifficulty.value)
+        {
+            case 0:
+                PlayerPrefs.SetInt("Timer", 600);
+                break;
+            case 1:
+                PlayerPrefs.SetInt("Timer", 450);
+                break;
+            case 2:
+                PlayerPrefs.SetInt("Timer", 300);
+                break;
+            default:
+                print("No value");
+                break;
+        }
+        if (LOB_Timer.instance != null)
+        {
+            LOB_Timer.instance.currentTime = PlayerPrefs.GetInt("Timer");
+        }
         SceneManager.LoadScene("Lobby");
     }
     public void Settings()
