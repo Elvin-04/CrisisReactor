@@ -50,7 +50,7 @@ Canvas:
   m_GameObject: {fileID: 411044867391442782}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: []
   P_cell: {fileID: 5746904717516842042, guid: cf82cbc5cd083f94abb7777862ecd1de, type: 3}
+  soundManager: {fileID: 0}
   waitedAtomImage: {fileID: 185904367025151518}
   waitedAtomText: {fileID: 4516552515457508838}
   atomsSprites:
@@ -430,14 +431,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ffd307641fc85e749882fbedcca61fc6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -9,6 +9,7 @@ TagManager:
   - Timer
   - Atom
   - GameManager
+  - AtomVFX
   layers:
   - Default
   - TransparentFX
