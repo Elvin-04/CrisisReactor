@@ -24,7 +24,7 @@ public class AIO_AtomMovement : MonoBehaviour
 
     public void RandomizeAtom()
     {
-        int randomizedIndex = Random.Range(0, 5);
+        int randomizedIndex = Random.Range(0, 6);
         GetComponent<SpriteRenderer>().sprite = atomsSprites[randomizedIndex];
         moveSpeed = Random.Range(0.3f, 2f);
         rotationSpeed = Random.Range(25f, 125f);
