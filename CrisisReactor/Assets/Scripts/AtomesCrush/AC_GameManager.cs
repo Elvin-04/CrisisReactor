@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class AC_GameManager : MonoBehaviour
 {
-    public List<AC_GridCell> grid = new List<AC_GridCell>();
+    private List<AC_GridCell> grid = new List<AC_GridCell>();
     public GameObject P_cell;
     private AC_GridCell selectedCell;
     private int width;
@@ -20,12 +20,36 @@ public class AC_GameManager : MonoBehaviour
     private bool isPlaying = true;
     private AC_GridCell hoveredCell;
 
+    public AC_GridCell GetNearestCell(AC_GridCell currentCell)
+    {
+        AC_GridCell nearestCell = null;
+        float nearestDistance = float.MaxValue;
+        foreach (AC_GridCell cell in grid)
+        {
+            if(cell != this)
+            {
+                float distance = Vector2.Distance(currentCell.transform.position, cell.transform.position);
+                if (distance < nearestDistance && cell != currentCell)
+                {
+                    nearestDistance = distance;
+                    nearestCell = cell;
+                }
+            }
+        }
 
+        if(nearestDistance > 0.5f)
+        {
+            return null;   
+        }
+        else
+        {
+            return nearestCell;
+        }
+    }
         public AC_GridCell HoveredCell
         {
-            get { return hoveredCell; }
-            set { hoveredCell = value; }
-
+            get {return hoveredCell;}
+            set {hoveredCell = value;}
         }
         public GameObject[] GetAtomsVFX()
         {
@@ -35,7 +59,6 @@ public class AC_GameManager : MonoBehaviour
         {
             return soundManager;
         }
-
         public bool GetIsPlaying()
         {
             return isPlaying;
@@ -45,7 +68,7 @@ public class AC_GameManager : MonoBehaviour
         {
             GameObject VFX = Instantiate(atomsVFX[_cellType]);
             VFX.transform.parent = _gameObjectParent.transform;
-            VFX.transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
+            VFX.transform.localScale = new Vector3(35f, 35f, 35f);
             VFX.transform.localPosition = Vector3.zero;
 
             return VFX;
@@ -217,7 +240,7 @@ public class AC_GameManager : MonoBehaviour
 
     private bool CheckForUpgrade(AC_GridCell _cellToUpgrade, AC_GridCell _cellToDestroy)
     {
-        if(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position) < 0.0035f && UpgradeAtoms(_cellToUpgrade.GetCellType(), selectedCell.GetCellType()) != AC_ENUM_Cell.CellType.Black)
+        if(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position) < 2.1f && UpgradeAtoms(_cellToUpgrade.GetCellType(), selectedCell.GetCellType()) != AC_ENUM_Cell.CellType.Black)
         {
             return true;
         }

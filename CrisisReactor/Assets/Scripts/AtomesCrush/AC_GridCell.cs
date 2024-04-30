@@ -8,10 +8,11 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public AC_GameManager gameManager;
     private Image image;
     private bool isSelected = false;
-    private bool isEnabled = true;
     private AC_ENUM_Cell.CellType cellType;
     private MG_SoundManager soundManager;
     private GameObject VFX = null;
+    private Camera mainCamera;
+    private Vector3 cachedPos = Vector3.zero;
 
 
     public void SetsoundManager(MG_SoundManager _soundManager)
@@ -21,15 +22,7 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        if(gameManager.GetIsPlaying())
-        {
-            soundManager.PlaySound(1);
-            if(gameManager.GetSelectedCell() != null)
-            {
-                if(gameManager.GetSelectedCell() != this)
-                gameManager.HoveredCell = this;
-            }
-        }
+        soundManager.PlaySound(1);
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
@@ -38,38 +31,52 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         gameManager.HoveredCell = null;
     }
 
-
-    //need to keep it for D&D working 
     public void OnDrag(PointerEventData pointerEventData)
-    {}
+    {
+        if(gameManager.GetIsPlaying())
+        {
+            Debug.Log(Vector2.Distance(transform.position, cachedPos));
+            Vector3 mousePosition = mainCamera.ScreenToWorldPoint(new Vector3(pointerEventData.position.x, pointerEventData.position.y, 0));
+            Vector3 targetPos = new Vector3(Mathf.Clamp(mousePosition.x, cachedPos.x - 1.5f, cachedPos.x + 1.5f), Mathf.Clamp(mousePosition.y, cachedPos.y - 1.5f, cachedPos.y + 1.5f),0);
+            transform.position = targetPos;
+        }
+    }
 
     public void OnBeginDrag(PointerEventData pointerEventData)
     {
         if(gameManager.GetIsPlaying())
         {
-         if(gameManager.GetSelectedCell() == null)
-            {
-                soundManager.PlaySound(3);
-                gameManager.OnCellClicked(this);
-                image.transform.localScale = new Vector2(0.75f, 0.75f);
-                isSelected = !isSelected;
-            }
+            if(gameManager.GetSelectedCell() == null)
+                {
+                    cachedPos = transform.position;
+                    soundManager.PlaySound(3);
+                    gameManager.OnCellClicked(this);
+                    image.transform.localScale = new Vector2(0.75f, 0.75f);
+                    isSelected = !isSelected;
+                }
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(gameManager.HoveredCell != null)
+        if(gameManager.GetIsPlaying())
         {
-            gameManager.UpgradeCell(gameManager.HoveredCell);
+            gameManager.HoveredCell = gameManager.GetNearestCell(this);
+            transform.position = cachedPos;
+
+            if(gameManager.HoveredCell != null)
+            {
+                gameManager.UpgradeCell(gameManager.HoveredCell);
+            }
+            image.transform.localScale = new Vector2(1f, 1f);
+            gameManager.OnCellUnselected();
+            gameManager.HoveredCell = null;
         }
-        image.transform.localScale = new Vector2(1f, 1f);
-        gameManager.OnCellUnselected();
-        gameManager.HoveredCell = null;
     }
 
     void Start()
     {
+        mainCamera = FindAnyObjectByType<Camera>();
         ResetCell();
     }
 
@@ -88,13 +95,6 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         image.transform.localScale = new Vector2(1f, 1f);
         isSelected = false;
-    }
-
-
-    public void ToggleEnabled(bool _enabled)
-    {
-        isEnabled = _enabled;
-        image.transform.localScale = new Vector2(0f, 0f);
     }
 
     public AC_ENUM_Cell.CellType GetCellType()
