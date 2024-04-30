@@ -268,6 +268,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 185904367025151518, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 889114676987534680, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 939910157312647402, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
       propertyPath: m_Spacing.x
       value: 5
@@ -286,11 +294,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1817004086198777654, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 380.6342
+      value: 368.65
       objectReference: {fileID: 0}
     - target: {fileID: 1817004086198777654, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 215.31702
+      value: 221.30994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813749888309383389, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
+      propertyPath: m_Name
+      value: waitedAtomVFX
       objectReference: {fileID: 0}
     - target: {fileID: 4008129430682164792, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
       propertyPath: m_AnchorMax.x
@@ -397,6 +409,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5316715102073692349, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
+      propertyPath: m_Spacing
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316715102073692349, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
       propertyPath: m_ChildScaleWidth
       value: 0
       objectReference: {fileID: 0}
@@ -416,6 +432,10 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1039594874}
+    - target: {fileID: 5393966598684696066, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
+      propertyPath: waitedAtomVFX
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5393966598684696066, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
       propertyPath: atomsVFX.Array.size
       value: 7
@@ -585,7 +605,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6592930678613671276, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6860165128245563459, guid: da86c49af9f0e334683b8acfe43eebba, type: 3}
       insertIndex: -1
@@ -687,6 +708,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 19ddae46111abb54788344dbeacff09a, type: 3}
   - {fileID: 8300000, guid: 33511d8fb64b8aa43bce4e2d68055d44, type: 3}
   - {fileID: 8300000, guid: eb4e9256bb4fa804c8f322e3b053209d, type: 3}
+  - {fileID: 8300000, guid: f1fcb22ac6ecf4342ab579c9d3e0d151, type: 3}
 --- !u!82 &1039594875
 AudioSource:
   m_ObjectHideFlags: 0
