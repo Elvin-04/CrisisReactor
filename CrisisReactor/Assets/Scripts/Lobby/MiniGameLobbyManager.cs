@@ -30,8 +30,8 @@ public class MiniGameLobbyManager : MonoBehaviour
         
         if(GameObject.Find("UI_UniversalDigicode(Clone)") == null)
         {
-            SceneManager.LoadScene("Lobby");
             backCanvas.SetActive(false);
+            SceneManager.LoadScene("Lobby");
         }
     }
 

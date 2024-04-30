@@ -52,7 +52,7 @@ public class ClickButton : MonoBehaviour
     private void OnVictory()
     {
         PlayerPrefs.SetInt("MiniGame2", 1);
-        SceneManager.LoadScene("Lobby");
+        GameObject.Find("MultiSceneManager").GetComponent<MiniGameLobbyManager>().LeaveMiniGame();
         Debug.Log("Win");
     }
 }
