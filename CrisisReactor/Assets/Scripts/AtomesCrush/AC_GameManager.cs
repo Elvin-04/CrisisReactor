@@ -23,6 +23,11 @@ public class AC_GameManager : MonoBehaviour
         {
             return soundManager;
         }
+
+        public Sprite[] GetAtomsSpritesTempaltes()
+        {
+            return atomsSprites;
+        }
         void Start()
         {   
             width = Random.Range(5, 8);
@@ -50,10 +55,6 @@ public class AC_GameManager : MonoBehaviour
                             waitedAtomImage.sprite = atomsSprites[6];
                             break;
                         }
-           
-
-
-
             CreateGrid();
         }
 
@@ -111,11 +112,11 @@ public class AC_GameManager : MonoBehaviour
                     break;
                     case 1:
                     randomizerIndex = 2;
-                    randomizerControl = 1;
+                    randomizerControl = 0;
                     break;
                     case 2:
                     randomizerIndex = 3;
-                    randomizerControl = 2;
+                    randomizerControl = 1;
                     break;
                     case 3:
                     randomizerIndex = 4;
