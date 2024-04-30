@@ -18,7 +18,13 @@ public class AC_GameManager : MonoBehaviour
     [SerializeField] private Image waitedAtomImage;
     [SerializeField] private TextMeshProUGUI waitedAtomText;
     [SerializeField] private Sprite[] atomsSprites;
+    [SerializeField] private GameObject[] atomsVFX;
 
+
+        public GameObject[] GetAtomsVFX()
+        {
+            return atomsVFX;
+        }
         public MG_SoundManager GetSoundManager()
         {
             return soundManager;
@@ -30,8 +36,10 @@ public class AC_GameManager : MonoBehaviour
         }
         void Start()
         {   
-            width = Random.Range(5, 8);
-            height = Random.Range(5, 9);
+            width = 8;
+            height = 6;
+            // width = Random.Range(5, 10);
+            // height = Random.Range(5, 8);
             gridLayout = GetComponent<GridLayoutGroup>();
 
             int randomizedWaitedAtom = Random.Range(0, 3);

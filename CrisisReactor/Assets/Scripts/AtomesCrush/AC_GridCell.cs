@@ -61,7 +61,10 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler
         image = GetComponent<Image>();
         cellType = _cellType;
         Sprite[] sprites = gameManager.GetAtomsSpritesTempaltes();
-        image.sprite = sprites[(int)cellType];
+     //   image.sprite = sprites[(int)cellType];
+        GameObject VFX = Instantiate(gameManager.GetAtomsVFX()[(int)cellType]);
+        VFX.transform.localScale *= 3.5f;
+        VFX.transform.parent = gameObject.transform;
         // switch (cellType)
         // {
         //     case AC_ENUM_Cell.CellType.Red:
