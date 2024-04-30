@@ -41,7 +41,7 @@ public class S_OnClick : MonoBehaviour
     private void OnVictory()
     {
         PlayerPrefs.SetInt("MiniGame6", 1);
-        SceneManager.LoadScene("Lobby");
+        GameObject.Find("MultiSceneManager").GetComponent<MiniGameLobbyManager>().LeaveMiniGame();
         Debug.Log("Win");
     }
 }

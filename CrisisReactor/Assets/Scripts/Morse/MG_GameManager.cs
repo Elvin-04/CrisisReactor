@@ -60,7 +60,7 @@ public class MG_GameManager : MonoBehaviour
         {
             Debug.Log("Gagné");
             PlayerPrefs.SetInt("MiniGame5", 1);
-            SceneManager.LoadScene("Lobby");
+            GameObject.Find("MultiSceneManager").GetComponent<MiniGameLobbyManager>().LeaveMiniGame();
         }
         else
         {

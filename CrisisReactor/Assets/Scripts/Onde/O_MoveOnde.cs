@@ -92,7 +92,7 @@ public class O_MoveOnde : MonoBehaviour
             PlayerPrefs.SetInt("MiniGame7", 1);
             soundManager.PlaySound(0);
             yield return new WaitForSeconds(1f);
-            SceneManager.LoadScene("Lobby");
+            GameObject.Find("MultiSceneManager").GetComponent<MiniGameLobbyManager>().LeaveMiniGame();
             print("Win");
         }
         else

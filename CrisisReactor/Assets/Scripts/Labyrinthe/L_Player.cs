@@ -71,7 +71,7 @@ public class L_Player : MonoBehaviour
     private void OnVictory()
     {
             PlayerPrefs.SetInt("MiniGame1", 1);
-            SceneManager.LoadScene("Lobby");
+            GameObject.Find("MultiSceneManager").GetComponent<MiniGameLobbyManager>().LeaveMiniGame();
             Debug.Log("Win");
     }
 

@@ -102,7 +102,7 @@ public class WG_GameManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private void OnVictory()
     {
         PlayerPrefs.SetInt("MiniGame3", 1);
-        SceneManager.LoadScene("Lobby");
+        GameObject.Find("MultiSceneManager").GetComponent<MiniGameLobbyManager>().LeaveMiniGame();
         Debug.Log("Win");
     }
 
