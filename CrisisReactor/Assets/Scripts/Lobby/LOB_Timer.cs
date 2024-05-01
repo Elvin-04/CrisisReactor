@@ -72,7 +72,7 @@ public class LOB_Timer : MonoBehaviour
     private void FixedUpdate()
     {
         //Update the timer variable
-        if (currentTime > 0)
+        if (currentTime > 0 && PlayerPrefs.GetInt("Game") == 1)
             currentTime -= Time.unscaledDeltaTime;
         //Update and set the time text on screen
         if (timerText != null)
