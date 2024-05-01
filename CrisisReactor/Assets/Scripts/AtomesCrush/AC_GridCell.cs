@@ -13,8 +13,8 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private GameObject VFX = null;
     private Camera mainCamera;
     private Vector3 cachedPos = Vector3.zero;
-
-
+    [SerializeField] private GameObject draggableAreaPrefab;
+    private GameObject dragArea;
     public void SetsoundManager(MG_SoundManager _soundManager)
     {
         soundManager = _soundManager;
@@ -33,9 +33,8 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnDrag(PointerEventData pointerEventData)
     {
-        if(gameManager.GetIsPlaying())
+        if(gameManager.GetIsPlaying() && pointerEventData.button != PointerEventData.InputButton.Right)
         {
-            Debug.Log(Vector2.Distance(transform.position, cachedPos));
             Vector3 mousePosition = mainCamera.ScreenToWorldPoint(new Vector3(pointerEventData.position.x, pointerEventData.position.y, 0));
             Vector3 targetPos = new Vector3(Mathf.Clamp(mousePosition.x, cachedPos.x - 1.5f, cachedPos.x + 1.5f), Mathf.Clamp(mousePosition.y, cachedPos.y - 1.5f, cachedPos.y + 1.5f),0);
             transform.position = targetPos;
@@ -46,8 +45,11 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         if(gameManager.GetIsPlaying())
         {
-            if(gameManager.GetSelectedCell() == null)
+            if(gameManager.GetSelectedCell() == null && pointerEventData.button != PointerEventData.InputButton.Right)
                 {
+                    dragArea = Instantiate(draggableAreaPrefab, transform.position, transform.rotation);
+                   // dragArea.transform.SetParent(transform);
+                   // gameManager.GetDraggableArea(this).SetActive(true);
                     cachedPos = transform.position;
                     soundManager.PlaySound(3);
                     gameManager.OnCellClicked(this);
@@ -59,8 +61,10 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(gameManager.GetIsPlaying())
+        if(gameManager.GetIsPlaying() && eventData.button != PointerEventData.InputButton.Right)
         {
+            Destroy(dragArea);
+            //gameManager.GetDraggableArea(this).SetActive(false);
             gameManager.HoveredCell = gameManager.GetNearestCell(this);
             transform.position = cachedPos;
 
@@ -68,6 +72,7 @@ public class AC_GridCell : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             {
                 gameManager.UpgradeCell(gameManager.HoveredCell);
             }
+
             image.transform.localScale = new Vector2(1f, 1f);
             gameManager.OnCellUnselected();
             gameManager.HoveredCell = null;

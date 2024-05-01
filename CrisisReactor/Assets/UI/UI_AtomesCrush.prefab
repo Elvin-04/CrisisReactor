@@ -177,22 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b33eba07a43834da80d4089d556949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: []
   P_cell: {fileID: 5746904717516842042, guid: cf82cbc5cd083f94abb7777862ecd1de, type: 3}
+  waitedAtomLayout: {fileID: 0}
   soundManager: {fileID: 0}
-  waitedAtomVFX: {fileID: 0}
-  waitedAtomText: {fileID: 0}
-  atomsSprites:
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   atomsVFX:
   - {fileID: 5822823068730282034, guid: e0388db22abcec548812c78a13739480, type: 3}
   - {fileID: 5822823068730282034, guid: 32be1e2d221bda14ea8a7746aacd0ee2, type: 3}
@@ -306,7 +293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ffd307641fc85e749882fbedcca61fc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85677b7d4559ca74fb2036591ed92c43, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

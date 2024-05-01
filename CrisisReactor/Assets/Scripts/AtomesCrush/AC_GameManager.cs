@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,7 @@ public class AC_GameManager : MonoBehaviour
     private int height;
     private GridLayoutGroup gridLayout;
     private AC_ENUM_Cell.CellType waitedAtom;
+    [SerializeField] private GameObject waitedAtomLayout;
     [SerializeField] private MG_SoundManager soundManager;
     [SerializeField] private GameObject[] atomsVFX;
     private bool isPlaying = true;
@@ -80,21 +82,21 @@ public class AC_GameManager : MonoBehaviour
             gridLayout = GetComponent<GridLayoutGroup>();
 
             int randomizedWaitedAtom = Random.Range(0, 3);
+            
             switch (randomizedWaitedAtom)
                         {
                             case 0:
                             waitedAtom = AC_ENUM_Cell.CellType.Blue;
-                            Debug.Log("Waited atom = blue");
                             break;
                             case 1:
                             waitedAtom = AC_ENUM_Cell.CellType.Magenta;
-                            Debug.Log("Waited atom = magenta");
                             break;
                             case 2:
                             waitedAtom = AC_ENUM_Cell.CellType.Red;
-                            Debug.Log("Waited atom = rouge");
                             break;
                         }
+
+            SpawnVFXAndAttach(waitedAtomLayout, (int)waitedAtom);
             CreateGrid();
         }
 
@@ -113,6 +115,8 @@ public class AC_GameManager : MonoBehaviour
             rectTransform.sizeDelta = new Vector2(cellWidth, cellHeight);
 
             castedCell.InitCell(_cellType);
+           // GameObject dragArea = Instantiate(draggableAreaPrefab, cellObject.transform.position, Quaternion.identity);
+          //  dragAreaByCell.Add(castedCell, dragArea);
         }
 
     //randomize atoms to have the same numbers at each games but not to the same positions
@@ -240,9 +244,16 @@ public class AC_GameManager : MonoBehaviour
 
     private bool CheckForUpgrade(AC_GridCell _cellToUpgrade, AC_GridCell _cellToDestroy)
     {
-        if(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position) < 2.1f && UpgradeAtoms(_cellToUpgrade.GetCellType(), selectedCell.GetCellType()) != AC_ENUM_Cell.CellType.Black)
+        if(_cellToUpgrade !=null)
         {
-            return true;
+                if(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position) < 2.1f && UpgradeAtoms(_cellToUpgrade.GetCellType(), selectedCell.GetCellType()) != AC_ENUM_Cell.CellType.Black)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
         }
         else
         {
