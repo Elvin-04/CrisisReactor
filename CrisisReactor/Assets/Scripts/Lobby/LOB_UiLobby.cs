@@ -20,6 +20,7 @@ public class LOB_UiLobby : MonoBehaviour
         }
         else
         {
+            uiFade.gameObject.SetActive(true);
             Camera.main.GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = true;
         }
     }

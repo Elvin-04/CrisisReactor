@@ -38,6 +38,8 @@ public class LOB_Timer : MonoBehaviour
     {
         totalTime = PlayerPrefs.GetInt("Timer");
         currentTime = totalTime;
+        if (currentTime <= 0)
+            currentTime = 600;
         GameObject[] multiScene = GameObject.FindGameObjectsWithTag("MultiSceneManager");
 
         if(multiScene.Length <= 1)
