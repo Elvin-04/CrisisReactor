@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class AIO_AtomMovement : MonoBehaviour
@@ -7,14 +8,15 @@ public class AIO_AtomMovement : MonoBehaviour
     private float moveSpeed = 5f;
     private float rotationSpeed = 200f;
     private Quaternion targetRotation;
-    private float randomizedAngle;
     private int mass;
     private Vector3 forwardDirection = Vector3.right;
+    private Vector3 randomizedSize = Vector3.zero;
 
     void Awake()
     {
         RandomizeAtom();
         forwardDirection = new Vector3(1, 1, 1) * Random.Range(-1f,1f);
+        Invoke("SwapAtom", Random.Range(5f, 10f));
     }
 
     public int GetMass()
@@ -45,7 +47,8 @@ public class AIO_AtomMovement : MonoBehaviour
                 break;
         }
         RandomizeDirection();
-        transform.localScale = new Vector3(1, 1, 1) * Random.Range(0.1f, 0.5f);
+        randomizedSize = new Vector3(1, 1, 1) * Random.Range(0.1f, 0.5f);
+        transform.localScale = randomizedSize;
     }
 
     void RandomizeDirection()
@@ -59,5 +62,40 @@ public class AIO_AtomMovement : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         transform.position += forwardDirection * moveSpeed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x , transform.position.y, 0f);
+    }
+
+    IEnumerator AnimSwap()
+    {
+        float duration = 2f;
+        float elapsedTime = 0f;
+        while (elapsedTime < duration) 
+        {
+            elapsedTime += Time.deltaTime;
+            float lerpFactor = Mathf.Clamp01(elapsedTime / duration);
+            transform.localScale = Vector3.Lerp(randomizedSize, Vector3.zero, lerpFactor);
+            yield return null;
+        }
+
+        transform.localScale = Vector3.zero;
+        yield return new WaitForSeconds(0.35f);
+
+        RandomizeAtom();
+        elapsedTime = 0f;
+
+        while (elapsedTime < duration) 
+        {
+            elapsedTime += Time.deltaTime;
+            float lerpFactor = Mathf.Clamp01(elapsedTime / duration);
+            transform.localScale = Vector3.Lerp(Vector3.zero, randomizedSize, lerpFactor);
+            yield return null;
+        }
+
+        transform.localScale = randomizedSize;
+        Invoke("SwapAtom", Random.Range(3f, 10f));
+    }
+
+    void SwapAtom()
+    {
+        StartCoroutine(AnimSwap());
     }
 }
