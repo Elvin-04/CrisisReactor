@@ -11,30 +11,31 @@ public class AIO_WrapAround : MonoBehaviour
     void WrapAroundScreen()
     {
         Camera mainCamera = Camera.main;
-        Vector3 viewportPosition = mainCamera.WorldToViewportPoint(transform.position);
+        Vector3 screenPosition = mainCamera.WorldToViewportPoint(transform.position);
 
-        if (viewportPosition.x < 0)
+        if (screenPosition.x < 0)
         {
-            viewportPosition.x = 1;
+            screenPosition.x = 1;
             InverseRotation();
         }
-        else if (viewportPosition.x > 1)
+        else if (screenPosition.x > 1)
         {
-            viewportPosition.x = 0;
+            screenPosition.x = 0;
             InverseRotation();
         }
 
-        if (viewportPosition.y < 0)
+        if (screenPosition.y < 0)
         {
-            viewportPosition.y = 1;
+            screenPosition.y = 1;
             InverseRotation();
         }
-        else if (viewportPosition.y > 1)
+        else if (screenPosition.y > 1)
         {
-            viewportPosition.y = 0;
+            screenPosition.y = 0;
             InverseRotation();
         }
-        transform.position = mainCamera.ViewportToWorldPoint(viewportPosition);
+
+        transform.position = mainCamera.ViewportToWorldPoint(screenPosition);
     }
 
     void InverseRotation()
