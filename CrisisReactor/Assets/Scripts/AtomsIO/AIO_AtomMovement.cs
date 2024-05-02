@@ -11,6 +11,12 @@ public class AIO_AtomMovement : MonoBehaviour
     private int mass;
     private Vector3 forwardDirection = Vector3.right;
     private Vector3 randomizedSize = Vector3.zero;
+    private bool isSwapping = false;
+
+    public bool GetIsSwapping()
+    {
+        return isSwapping;
+    }
 
     void Awake()
     {
@@ -66,6 +72,7 @@ public class AIO_AtomMovement : MonoBehaviour
 
     IEnumerator AnimSwap()
     {
+        isSwapping = true;
         float duration = 2f;
         float elapsedTime = 0f;
         while (elapsedTime < duration) 
@@ -87,10 +94,14 @@ public class AIO_AtomMovement : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float lerpFactor = Mathf.Clamp01(elapsedTime / duration);
             transform.localScale = Vector3.Lerp(Vector3.zero, randomizedSize, lerpFactor);
+
+            if(elapsedTime >= 1.65f)
+            {isSwapping = false;}
             yield return null;
         }
 
         transform.localScale = randomizedSize;
+        
         Invoke("SwapAtom", Random.Range(3f, 10f));
     }
 

@@ -29,18 +29,21 @@ public class AIO_AttractionComponent : MonoBehaviour
         {
             foreach (GameObject atom in atomsInZone)
             {
-                Vector3 direction = gameObject.transform.position - atom.transform.position;
-                float distance = direction.magnitude;
-                        float attractionStrength = maxAttractionForce / (distance * distance);
-                        Vector3 force = direction.normalized * attractionStrength;
-                        Vector3 newPosition = atom.transform.position + force * Time.deltaTime;
+                if(!atom.GetComponent<AIO_AtomMovement>().GetIsSwapping())
+                {
+                    Vector3 direction = gameObject.transform.position - atom.transform.position;
+                    float distance = direction.magnitude;
+                    float attractionStrength = maxAttractionForce / (distance * distance);
+                    Vector3 force = direction.normalized * attractionStrength;
+                    Vector3 newPosition = atom.transform.position + force * Time.deltaTime;
 
-                        atom.transform.position = newPosition;
+                    atom.transform.position = newPosition;
 
                         if (Vector3.Distance(atom.transform.position, gameObject.transform.position) <= 0.25f)
                         {
                             AbsrobAtom(atom);
                         }
+                }
             }
         }
     }
