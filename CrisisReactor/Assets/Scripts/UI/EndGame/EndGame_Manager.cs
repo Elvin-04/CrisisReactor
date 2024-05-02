@@ -1,10 +1,12 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndGame_Manager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textEndGame;
+    [SerializeField] private Image background;
 
     private void Start()
     {
@@ -14,6 +16,8 @@ public class EndGame_Manager : MonoBehaviour
         }
         else
         {
+            background.color = Color.black;
+            background.sprite = null;
             textEndGame.text = "Defeat";
         }
 

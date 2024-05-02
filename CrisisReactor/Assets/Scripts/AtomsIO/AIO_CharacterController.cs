@@ -58,6 +58,9 @@ public class AIO_CharacterController : MonoBehaviour
     //direction and movement computing
     void Update()
     {
+                Camera mainCamera = Camera.main;
+        Vector3 screenPosition = mainCamera.WorldToViewportPoint(transform.position);
+        Debug.Log(screenPosition);
         direction = worldPosition - transform.position;
         distance = direction.magnitude;
 

@@ -261,8 +261,6 @@ public class AC_GameManager : MonoBehaviour
         }
     }
 
-
-
     private Dictionary<(AC_ENUM_Cell.CellType, AC_ENUM_Cell.CellType), AC_ENUM_Cell.CellType> UpgradedCellColors = new Dictionary<(AC_ENUM_Cell.CellType, AC_ENUM_Cell.CellType), AC_ENUM_Cell.CellType>
     {
         {(AC_ENUM_Cell.CellType.White, AC_ENUM_Cell.CellType.White), AC_ENUM_Cell.CellType.Yellow},
