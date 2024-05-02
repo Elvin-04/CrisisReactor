@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AtomsIO
   m_EditorClassIdentifier: 
   size: 0.9
-  position: {x: 4.87, y: 4.07}
+  position: {x: 6.25, y: -3.5}
   miniGameScene: AtomsIO

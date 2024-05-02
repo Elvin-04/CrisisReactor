@@ -9,7 +9,7 @@ public class AIO_GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentMassText;
     private Queue<GameObject> atomPool = new Queue<GameObject>();
     private List<GameObject> activeAtoms = new List<GameObject>();
-    private int poolMaxAliveCount = 15;
+    private int poolMaxAliveCount = 10;
     private float maxSpawnDistance = 1000f;
     private int patternIndex;
     private int characterMass;

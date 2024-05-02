@@ -1,6 +1,4 @@
 using TMPro;
-using TMPro.EditorUtilities;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,9 +11,13 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject playPanel;
     [SerializeField] private GameObject mainMenuButton;
     [SerializeField] private TMP_Dropdown dropDownDifficulty;
+    [SerializeField] private Slider sliderGeneral;
+    [SerializeField] private Slider sliderMusic;
+    [SerializeField] private Slider sliderSFX;
 
     private void Start()
     {
+        SetVolumeSlider();
         _toggleFullScreen.isOn = Screen.fullScreen;
         switch (PlayerPrefs.GetInt("Timer"))
         {
@@ -48,6 +50,9 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        PlayerPrefs.SetFloat("General", sliderGeneral.value);
+        PlayerPrefs.SetFloat("Music", sliderMusic.value);
+        PlayerPrefs.SetFloat("SFX", sliderSFX.value);
         switch (dropDownDifficulty.value)
         {
             case 0:
@@ -97,5 +102,14 @@ public class MenuManager : MonoBehaviour
     public void OpenLink(string link)
     {
         Application.OpenURL(link);
+    }
+    public void SetVolumeSlider()
+    {
+        if (PlayerPrefs.GetInt("Sound") == 1)
+        {
+            sliderGeneral.value = PlayerPrefs.GetFloat("General");
+            sliderMusic.value = PlayerPrefs.GetFloat("Music");
+            sliderSFX.value = PlayerPrefs.GetFloat("SFX");
+        }
     }
 }

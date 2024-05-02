@@ -38,6 +38,8 @@ public class LOB_Timer : MonoBehaviour
     {
         totalTime = PlayerPrefs.GetInt("Timer");
         currentTime = totalTime;
+        if (currentTime <= 0)
+            currentTime = 600;
         GameObject[] multiScene = GameObject.FindGameObjectsWithTag("MultiSceneManager");
 
         if(multiScene.Length <= 1)
@@ -72,7 +74,7 @@ public class LOB_Timer : MonoBehaviour
     private void FixedUpdate()
     {
         //Update the timer variable
-        if (currentTime > 0)
+        if (currentTime > 0 && PlayerPrefs.GetInt("Game") == 1)
             currentTime -= Time.unscaledDeltaTime;
         //Update and set the time text on screen
         if (timerText != null)

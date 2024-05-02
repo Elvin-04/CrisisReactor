@@ -1,60 +1,102 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
 public class AC_GameManager : MonoBehaviour
 {
-    public List<AC_GridCell> grid = new List<AC_GridCell>();
+    private List<AC_GridCell> grid = new List<AC_GridCell>();
     public GameObject P_cell;
     private AC_GridCell selectedCell;
     private int width;
     private int height;
     private GridLayoutGroup gridLayout;
     private AC_ENUM_Cell.CellType waitedAtom;
+    [SerializeField] private GameObject waitedAtomLayout;
     [SerializeField] private MG_SoundManager soundManager;
-    [SerializeField] private Image waitedAtomImage;
-    [SerializeField] private TextMeshProUGUI waitedAtomText;
-    [SerializeField] private Sprite[] atomsSprites;
+    [SerializeField] private GameObject[] atomsVFX;
+    private bool isPlaying = true;
+    private AC_GridCell hoveredCell;
 
+    public AC_GridCell GetNearestCell(AC_GridCell currentCell)
+    {
+        AC_GridCell nearestCell = null;
+        float nearestDistance = float.MaxValue;
+        foreach (AC_GridCell cell in grid)
+        {
+            if(cell != this)
+            {
+                float distance = Vector2.Distance(currentCell.transform.position, cell.transform.position);
+                if (distance < nearestDistance && cell != currentCell)
+                {
+                    nearestDistance = distance;
+                    nearestCell = cell;
+                }
+            }
+        }
+
+        if(nearestDistance > 0.5f)
+        {
+            return null;   
+        }
+        else
+        {
+            return nearestCell;
+        }
+    }
+        public AC_GridCell HoveredCell
+        {
+            get {return hoveredCell;}
+            set {hoveredCell = value;}
+        }
+        public GameObject[] GetAtomsVFX()
+        {
+            return atomsVFX;
+        }
         public MG_SoundManager GetSoundManager()
         {
             return soundManager;
         }
-
-        public Sprite[] GetAtomsSpritesTempaltes()
+        public bool GetIsPlaying()
         {
-            return atomsSprites;
+            return isPlaying;
+        }
+
+        public GameObject SpawnVFXAndAttach(GameObject _gameObjectParent, int _cellType)
+        {
+            GameObject VFX = Instantiate(atomsVFX[_cellType]);
+            VFX.transform.parent = _gameObjectParent.transform;
+            VFX.transform.localScale = new Vector3(35f, 35f, 35f);
+            VFX.transform.localPosition = Vector3.zero;
+
+            return VFX;
         }
         void Start()
         {   
-            width = Random.Range(5, 8);
-            height = Random.Range(5, 9);
+            width = Random.Range(5, 9);
+            height = Random.Range(5, 7);
             gridLayout = GetComponent<GridLayoutGroup>();
 
             int randomizedWaitedAtom = Random.Range(0, 3);
-
-
+            
             switch (randomizedWaitedAtom)
                         {
                             case 0:
                             waitedAtom = AC_ENUM_Cell.CellType.Blue;
-                            waitedAtomText.text = "Résultat attendu : BLUE";
-                            waitedAtomImage.sprite = atomsSprites[4];
                             break;
                             case 1:
                             waitedAtom = AC_ENUM_Cell.CellType.Magenta;
-                            waitedAtomText.text = "Résultat attendu : MAGENTA";
-                            waitedAtomImage.sprite = atomsSprites[5];
                             break;
                             case 2:
                             waitedAtom = AC_ENUM_Cell.CellType.Red;
-                            waitedAtomText.text = "Résultat attendu : RED";
-                            waitedAtomImage.sprite = atomsSprites[6];
                             break;
                         }
+
+            SpawnVFXAndAttach(waitedAtomLayout, (int)waitedAtom);
             CreateGrid();
         }
 
@@ -73,6 +115,8 @@ public class AC_GameManager : MonoBehaviour
             rectTransform.sizeDelta = new Vector2(cellWidth, cellHeight);
 
             castedCell.InitCell(_cellType);
+           // GameObject dragArea = Instantiate(draggableAreaPrefab, cellObject.transform.position, Quaternion.identity);
+          //  dragAreaByCell.Add(castedCell, dragArea);
         }
 
     //randomize atoms to have the same numbers at each games but not to the same positions
@@ -92,6 +136,7 @@ public class AC_GameManager : MonoBehaviour
         }
     }
 
+    //init grid and cells with random control
     private void CreateGrid()
     {
         gridLayout.constraint = GridLayoutGroup.Constraint.FixedRowCount;
@@ -167,22 +212,28 @@ public class AC_GameManager : MonoBehaviour
         return selectedCell;
     }
 
+    private void OnVictory()
+    {
+        PlayerPrefs.SetInt("MiniGame4", 1);
+        SceneManager.LoadScene("Lobby");
+        Debug.Log("winned");
+    }
+
     public void UpgradeCell(AC_GridCell _cellFrom)
     {
         if(CheckForUpgrade(_cellFrom, selectedCell))
         {
             soundManager.PlaySound(5);
-            selectedCell.InitCell(UpgradeAtoms(selectedCell.GetCellType(), _cellFrom.GetCellType()));
-            _cellFrom.InitCell(AC_ENUM_Cell.CellType.White);
+            _cellFrom.InitCell(UpgradeAtoms(selectedCell.GetCellType(), _cellFrom.GetCellType()));
+            selectedCell.InitCell(AC_ENUM_Cell.CellType.White);
 
-            if(selectedCell.GetCellType() == waitedAtom)
+            if(_cellFrom.GetCellType() == waitedAtom)
             {
-                PlayerPrefs.SetInt("MiniGame4", 1);
-                SceneManager.LoadScene("Lobby");
-                Debug.Log("winned");
+                isPlaying = false;
+                soundManager.PlaySound(7);
+                Invoke("OnVictory", 2.25f);
             }
-
-            selectedCell.ResetCell();
+            _cellFrom.ResetCell();
             OnCellUnselected();
         }
         else
@@ -193,9 +244,16 @@ public class AC_GameManager : MonoBehaviour
 
     private bool CheckForUpgrade(AC_GridCell _cellToUpgrade, AC_GridCell _cellToDestroy)
     {
-        if(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position) < 156f && UpgradeAtoms(_cellToUpgrade.GetCellType(), selectedCell.GetCellType()) != AC_ENUM_Cell.CellType.Black)
+        if(_cellToUpgrade !=null)
         {
-            return true;
+                if(Vector2.Distance(_cellToUpgrade.transform.position, _cellToDestroy.transform.position) < 2.1f && UpgradeAtoms(_cellToUpgrade.GetCellType(), selectedCell.GetCellType()) != AC_ENUM_Cell.CellType.Black)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
         }
         else
         {
