@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class LOB_Timer : MonoBehaviour
 {
     [Header("Timer")]
-    public float totalTime = 300;
-    public float currentTime = 300;
+    public float totalTime;
+    public float currentTime;
     [SerializeField] private TextMeshProUGUI timerText;
     [HideInInspector] public int value = 0;
     int currentTimeInt;
@@ -36,6 +36,10 @@ public class LOB_Timer : MonoBehaviour
     //Create DontDestroyOnLoad scene 
     private void Start()
     {
+        totalTime = PlayerPrefs.GetInt("Timer");
+        currentTime = totalTime;
+        if (currentTime <= 0)
+            currentTime = 600;
         GameObject[] multiScene = GameObject.FindGameObjectsWithTag("MultiSceneManager");
 
         if(multiScene.Length <= 1)
@@ -70,7 +74,7 @@ public class LOB_Timer : MonoBehaviour
     private void FixedUpdate()
     {
         //Update the timer variable
-        if (currentTime > 0)
+        if (currentTime > 0 && PlayerPrefs.GetInt("Game") == 1)
             currentTime -= Time.unscaledDeltaTime;
         //Update and set the time text on screen
         if (timerText != null)
@@ -83,7 +87,10 @@ public class LOB_Timer : MonoBehaviour
         if(currentTimeInt != (int)currentTime)
         {
             currentTimeInt = (int)currentTime;
-            GetComponent<AudioSource>().Play();
+
+            if(currentTimeInt > 0 && currentTimeInt < totalTime && SceneManager.GetActiveScene().name != "UIDefeatVictory"
+                && SceneManager.GetActiveScene().name != "MainMenu")
+                GetComponent<AudioSource>().Play();
         }
 
 

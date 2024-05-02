@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f16d83f64670447820a71fd4305ed2, type: 3}
   m_Name: MorseGame
   m_EditorClassIdentifier: 
-  size: 1
+  size: 0.8
   position: {x: -5.5, y: -1.75}
   miniGameScene: MorseGame

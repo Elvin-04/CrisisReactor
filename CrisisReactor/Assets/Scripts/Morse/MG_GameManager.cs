@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class MG_GameManager : MonoBehaviour
@@ -15,6 +16,7 @@ public class MG_GameManager : MonoBehaviour
     [SerializeField] private MG_SoundManager soundManager;
     private Animator animator;
     private string waitedWord;
+    [SerializeField] private Button buttonStart;
 
     //morseCode dictionnary is used to translate from char to morse code
     private Dictionary<char, string> morseCode = new Dictionary<char, string>()
@@ -25,11 +27,10 @@ public class MG_GameManager : MonoBehaviour
         {'9', "----."}
     };
 
-    
-
-    void Start()
+    private void Start()
     {
         RandomWord();
+        tempoCircleGray.gameObject.SetActive(true);
     }
 
     private void RandomWord()
@@ -40,7 +41,6 @@ public class MG_GameManager : MonoBehaviour
             waitedWord = waitedWord + morseCode.ElementAt(UnityEngine.Random.Range(0, morseCode.Count)).Key;
         }
         Debug.Log("mot attendu = " + waitedWord);
-        PlayAnimButton();
     }
 
     public void PlayAnimButton()
@@ -62,7 +62,7 @@ public class MG_GameManager : MonoBehaviour
             PlayerPrefs.SetInt("MiniGame5", 1);
             GameObject.Find("MultiSceneManager").GetComponent<MiniGameLobbyManager>().LeaveMiniGame();
         }
-        else
+        else if (!string.Equals(_commitedWord, ""))
         {
             Debug.Log("Perdu");
             LOB_Timer.instance.RemoveTimer(20);
@@ -74,37 +74,40 @@ public class MG_GameManager : MonoBehaviour
     //execute morse sequence with sound and sprite swapping
     IEnumerator ExecuteMorse()
     {
-        while (true)
+        foreach (char _letter in waitedWord)
         {
-            foreach (char _letter in waitedWord)
+            if (morseCode.TryGetValue(_letter, out string morseSequence))
             {
-                if (morseCode.TryGetValue(_letter, out string morseSequence))
+                foreach (char morseChar in morseSequence)
                 {
-                    foreach (char morseChar in morseSequence)
+                    float duration = (morseChar == '.') ? 0.2f : 1.5f;
+                    tempoCircle.gameObject.SetActive(true);
+                    soundIcon.gameObject.SetActive(true);
+                    if (duration == 0.2f)
                     {
-                        float duration = (morseChar == '.') ? 0.2f : 1.5f;
-                        tempoCircle.gameObject.SetActive(true);
-                        soundIcon.gameObject.SetActive(true);
-                        if (duration == 0.2f)
-                        {
-                            soundManager.PlaySound(5);
-                        }
-                        else
-                        {
-                            soundManager.PlaySound(6);
-                        }
-                        yield return new WaitForSeconds(duration);
-                        soundIcon.gameObject.SetActive(false);
-                        tempoCircle.gameObject.SetActive(false);
-                        
-                        yield return new WaitForSeconds(0.5f);
+                        soundManager.PlaySound(5);
                     }
-                    yield return new WaitForSeconds(3f);
+                    else
+                    {
+                        soundManager.PlaySound(6);
+                    }
+                    yield return new WaitForSeconds(duration);
+                    soundIcon.gameObject.SetActive(false);
+                    tempoCircle.gameObject.SetActive(false);
+                        
+                    yield return new WaitForSeconds(0.5f);
                 }
+                yield return new WaitForSeconds(3f);
             }
-            tempoCircleGray.gameObject.SetActive(true);
-            yield return new WaitForSeconds(5f);
-            tempoCircleGray.gameObject.SetActive(false);
         }
+        tempoCircleGray.gameObject.SetActive(true);
+        buttonStart.interactable = true;
+    }
+
+    public void StartMorse()
+    {
+        tempoCircleGray.gameObject.SetActive(false);
+        PlayAnimButton();
+        buttonStart.interactable = false;
     }
 }
