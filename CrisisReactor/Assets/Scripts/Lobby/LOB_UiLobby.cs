@@ -16,8 +16,10 @@ public class LOB_UiLobby : MonoBehaviour
     [SerializeField] private Slider sliderGeneral;
     [SerializeField] private Slider sliderMusic;
     [SerializeField] private Slider sliderSFX;
+    private MG_SoundManager soundManager;
     private void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
         sliderGeneral.value = PlayerPrefs.GetFloat("General");
         sliderMusic.value = PlayerPrefs.GetFloat("Music");
         sliderSFX.value = PlayerPrefs.GetFloat("SFX");
@@ -36,6 +38,7 @@ public class LOB_UiLobby : MonoBehaviour
 
     public void StartGame()
     {
+        soundManager.PlaySound(0);
         PlayerPrefs.SetInt("Game", 1);
         Camera.main.GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = false;
         StartCoroutine(StartFadeOut(0.005f));
