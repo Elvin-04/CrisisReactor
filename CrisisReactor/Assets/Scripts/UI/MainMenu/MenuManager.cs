@@ -40,12 +40,14 @@ public class MenuManager : MonoBehaviour
     {
         playPanel.SetActive(true);
         mainMenuButton.SetActive(false);
+        Camera.main.GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = false;
     }
 
     public void BackMainMenu()
     {
         playPanel.SetActive(false);
         mainMenuButton.SetActive(true);
+        Camera.main.GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = true;
     }
 
     public void StartGame()
