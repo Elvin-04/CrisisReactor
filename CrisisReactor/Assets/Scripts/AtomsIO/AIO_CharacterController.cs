@@ -37,8 +37,8 @@ public class AIO_CharacterController : MonoBehaviour
     {
         Vector2 mousePosition = context.ReadValue<Vector2>();
         Camera mainCamera = Camera.main;
+
         worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 0));
-        
         worldPosition.z = transform.position.z;
     }
 
@@ -61,7 +61,7 @@ public class AIO_CharacterController : MonoBehaviour
         direction = worldPosition - transform.position;
         distance = direction.magnitude;
 
-        if (distance > 0.01f)
+        if (distance > 0.5f)
         {
             Movement();
         }
