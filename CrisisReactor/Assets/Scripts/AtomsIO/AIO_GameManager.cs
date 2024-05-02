@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AIO_GameManager : MonoBehaviour
 {
@@ -64,10 +65,13 @@ public class AIO_GameManager : MonoBehaviour
         Debug.Log("waited mass = " + waitedMass);
         if(characterMass == waitedMass)
         {
+            SceneManager.LoadScene("Lobby");
+            PlayerPrefs.SetInt("MiniGame8", 1);
             Debug.Log("winned");
         }
         else if(characterMass > waitedMass)
         {
+            LOB_Timer.instance.RemoveTimer(20);
             Debug.Log("loosed");
         }
     }

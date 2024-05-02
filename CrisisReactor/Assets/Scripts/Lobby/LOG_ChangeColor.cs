@@ -7,6 +7,7 @@ public class LOG_ChangeColor : MonoBehaviour
 {
     [SerializeField] private List<Image> imageMiniGame = new();
     [SerializeField] private List<Button> buttonLobby = new();
+    [SerializeField] private List<Image> imageLobby = new();
     private int nbMiniGameFinish;
     void Start()
     {
@@ -17,6 +18,7 @@ public class LOG_ChangeColor : MonoBehaviour
                 imageMiniGame[i].color = new Color(0, 1, 0, 177f / 255f);
                 buttonLobby[i].interactable = false;
                 nbMiniGameFinish++;
+                imageLobby[i].color = Color.yellow;
                 if (nbMiniGameFinish >= buttonLobby.Count)
                 {
                     PlayerPrefs.SetString("Victory", ((int)LOB_Timer.instance.currentTime / 60).ToString("00") + ":" + ((int)LOB_Timer.instance.currentTime % 60).ToString("00"));
