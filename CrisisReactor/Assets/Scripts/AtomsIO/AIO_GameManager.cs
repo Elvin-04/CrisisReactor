@@ -20,9 +20,9 @@ public class AIO_GameManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        patternIndex = Random.Range(0,3);
         SetPattern();
 
-        patternIndex = Random.Range(0,2);
         AIO_CharacterController character = Instantiate(characterPrefab).GetComponent<AIO_CharacterController>();
         character.SetSpriteByPattern(patternIndex);
 
@@ -56,7 +56,7 @@ public class AIO_GameManager : MonoBehaviour
     public void AddPlayerMass(int massToAdd)
     {
         characterMass += massToAdd;
-        currentMassText.text = "Masse : " + string.Format("{0:# ###}", characterMass);
+        currentMassText.text = "Masse : " + string.Format("{0:### ### ###}", characterMass);
         CheckMassForVictory();
     }
 
