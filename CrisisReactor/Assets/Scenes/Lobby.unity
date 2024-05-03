@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 130061864}
   - component: {fileID: 130061863}
   m_Layer: 5
-  m_Name: ImageAtomeIO
+  m_Name: ImageAtomeCrusher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,7 +558,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130061861}
   m_LocalRotation: {x: -0.43830445, y: -0.0076506515, z: -0.015686158, w: 0.8986572}
-  m_LocalPosition: {x: 0, y: 0, z: -23.52}
+  m_LocalPosition: {x: 0, y: 0, z: -23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -566,7 +566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -52, y: 0, z: -2}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.13, y: -33.28}
+  m_AnchoredPosition: {x: 15, y: -33}
   m_SizeDelta: {x: 594.88, y: 208.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130061863
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 205417086}
   - component: {fileID: 205417085}
   m_Layer: 5
-  m_Name: AtomIo
+  m_Name: AtomeCrusher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,7 +709,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205417083}
   m_LocalRotation: {x: 0.4560405, y: -0.0527298, z: 0.047086313, w: 0.88714683}
-  m_LocalPosition: {x: 0, y: 0, z: -3.16983}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -718,8 +718,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 54.5, y: -5, z: 3.5}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 678.27, y: -373.11}
-  m_SizeDelta: {x: 466.38, y: 364.09}
+  m_AnchoredPosition: {x: 678, y: -373}
+  m_SizeDelta: {x: 466, y: 364}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &205417085
 MonoBehaviour:
@@ -770,7 +770,7 @@ MonoBehaviour:
         m_MethodName: Zoom
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 17a508fb023418d4db9e485e0488fff3, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: a665299af5b1bfd48b1b93c230d24081, type: 2}
           m_ObjectArgumentAssemblyTypeName: LOB_MiniGame, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3383,7 +3383,7 @@ GameObject:
   - component: {fileID: 654081958}
   - component: {fileID: 654081957}
   m_Layer: 5
-  m_Name: ImageAtome
+  m_Name: ImageAtomeIO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9132,7 +9132,7 @@ GameObject:
   - component: {fileID: 2017578111}
   - component: {fileID: 2017578110}
   m_Layer: 5
-  m_Name: AtomeCrusher
+  m_Name: AtomeIO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9207,7 +9207,7 @@ MonoBehaviour:
         m_MethodName: Zoom
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: a665299af5b1bfd48b1b93c230d24081, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 17a508fb023418d4db9e485e0488fff3, type: 2}
           m_ObjectArgumentAssemblyTypeName: LOB_MiniGame, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -9698,10 +9698,10 @@ RectTransform:
   - {fileID: 1123346181}
   - {fileID: 967283329}
   - {fileID: 1970385521}
-  - {fileID: 2017578109}
   - {fileID: 1977542345}
   - {fileID: 873181629}
   - {fileID: 387973868}
+  - {fileID: 2017578109}
   - {fileID: 205417084}
   m_Father: {fileID: 1642248245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9896,20 +9896,20 @@ MonoBehaviour:
   - {fileID: 1045222639}
   - {fileID: 1620730097}
   - {fileID: 1311747897}
-  - {fileID: 654081957}
+  - {fileID: 130061863}
   - {fileID: 1301664210}
   - {fileID: 781375179}
   - {fileID: 1324695388}
-  - {fileID: 130061863}
+  - {fileID: 654081957}
   buttonLobby:
   - {fileID: 1123346182}
   - {fileID: 967283330}
   - {fileID: 1970385522}
-  - {fileID: 2017578110}
+  - {fileID: 205417085}
   - {fileID: 1977542346}
   - {fileID: 873181630}
   - {fileID: 387973869}
-  - {fileID: 205417085}
+  - {fileID: 2017578110}
   imageLobby:
   - {fileID: 185043822}
   - {fileID: 680386630}
