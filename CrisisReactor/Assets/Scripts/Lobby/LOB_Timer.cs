@@ -78,7 +78,12 @@ public class LOB_Timer : MonoBehaviour
             currentTime -= Time.unscaledDeltaTime;
         //Update and set the time text on screen
         if (timerText != null && SceneManager.GetActiveScene().name == "Lobby")
-            timerText.text = ((int)currentTime / 60).ToString("0 0") + ":" + ((int)currentTime % 60).ToString("0 0");
+        {
+            if ((int)currentTime / 60 == 1)
+                timerText.text = ((int)currentTime / 60).ToString("0 0 ") + ":" + ((int)currentTime % 60).ToString("0 0");
+            else
+                timerText.text = ((int)currentTime / 60).ToString("0 0") + ":" + ((int)currentTime % 60).ToString("0 0");
+        }
         else if (timerText != null)
             timerText.text = ((int)currentTime / 60).ToString("00") + ":" + ((int)currentTime % 60).ToString("00");
         else
