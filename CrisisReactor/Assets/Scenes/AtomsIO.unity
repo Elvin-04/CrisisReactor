@@ -141,11 +141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 77234710923349943, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 328.2
+      value: 328.19995
       objectReference: {fileID: 0}
     - target: {fileID: 77234710923349943, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -47.8
+      value: -47.80005
       objectReference: {fileID: 0}
     - target: {fileID: 4799036202230358316, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
       propertyPath: checkPaddingRequired
@@ -202,6 +202,18 @@ PrefabInstance:
     - target: {fileID: 6269162545531494146, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
       propertyPath: m_VertexColorAlwaysGammaSpace
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457557919987096350, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457557919987096350, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457557919987096350, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 9049025321823255330, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
       propertyPath: m_Enabled
@@ -269,8 +281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 111.70001, y: -94.5}
-  m_SizeDelta: {x: 282.25, y: 87.75}
+  m_AnchoredPosition: {x: 155.45001, y: -105.6875}
+  m_SizeDelta: {x: 499.5873, y: 143.3263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537240804
 MonoBehaviour:
@@ -324,7 +336,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 180
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
