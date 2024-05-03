@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,7 +20,6 @@ public class LOB_LobbyManager : MonoBehaviour
 
     private bool zoom = false;
     private bool cancelZoom = false;
-
 
     private void Awake()
     {
