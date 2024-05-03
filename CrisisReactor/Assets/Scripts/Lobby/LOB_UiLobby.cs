@@ -9,6 +9,7 @@ public class LOB_UiLobby : MonoBehaviour
     [SerializeField] private GameObject uiRestart;
     [SerializeField] private GameObject uiMainMenu;
     [SerializeField] private GameObject uiQuit;
+    [SerializeField] private GameObject uiPostIt;
     [SerializeField] private Image uiFade;
     [SerializeField] private GameObject buttonRed;
     [SerializeField] private GameObject uiSettings;
@@ -130,5 +131,13 @@ public class LOB_UiLobby : MonoBehaviour
     {
         Application.Quit();
         DeletePlayerPref();
+    }
+    public void OpenPostIt()
+    {
+        uiPostIt.SetActive(true);
+    }
+    public void ClosePostIt()
+    {
+        uiPostIt.SetActive(false);
     }
 }

@@ -7,9 +7,11 @@ public class EndGame_Manager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textEndGame;
     [SerializeField] private Image background;
+    private MG_SoundManager soundManager;
 
     private void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
         if (PlayerPrefs.GetString("Victory") != "")
         {
             textEndGame.text = "Victory\n" + "Timer : " + PlayerPrefs.GetString("Victory");
@@ -19,6 +21,7 @@ public class EndGame_Manager : MonoBehaviour
             background.color = Color.black;
             background.sprite = null;
             textEndGame.text = "Defeat";
+            soundManager.PlaySound(0);
         }
     }
     public void Restart()
