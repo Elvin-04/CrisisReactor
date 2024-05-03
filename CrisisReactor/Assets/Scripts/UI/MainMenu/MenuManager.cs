@@ -17,7 +17,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Slider sliderMusic;
     [SerializeField] private Slider sliderSFX;
     [SerializeField] private Volume volume;
+    [HideInInspector] public MG_SoundManager soundManager;
     public static MenuManager Instance;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        soundManager = soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
         SetVolumeSlider();
         _toggleFullScreen.isOn = Screen.fullScreen;
         switch (PlayerPrefs.GetInt("Timer"))

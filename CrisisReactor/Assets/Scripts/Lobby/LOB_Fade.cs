@@ -16,6 +16,11 @@ public class LOB_Fade : MonoBehaviour
     }
     public void StartAnimation()
     {
+        if (MenuManager.Instance != null)
+        {
+            MenuManager.Instance.audioSource.gameObject.SetActive(false);
+            MenuManager.Instance.soundManager.PlaySound(0);
+        }
         _image.gameObject.SetActive(true);
         _animation = true;
     }
