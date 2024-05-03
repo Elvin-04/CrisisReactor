@@ -148,11 +148,23 @@ PrefabInstance:
       value: -47.80005
       objectReference: {fileID: 0}
     - target: {fileID: 4799036202230358316, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f09334b70212b6e4296b6fc7cc9ce52c, type: 2}
+    - target: {fileID: 4799036202230358316, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6705566708610631730, guid: f09334b70212b6e4296b6fc7cc9ce52c, type: 2}
+    - target: {fileID: 4799036202230358316, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
       propertyPath: checkPaddingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4799036202230358316, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
       propertyPath: m_enableExtraPadding
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799036202230358316, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5708742756888069370, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
@@ -304,17 +316,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '00 : 00'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f09334b70212b6e4296b6fc7cc9ce52c, type: 2}
+  m_sharedMaterial: {fileID: 6705566708610631730, guid: f09334b70212b6e4296b6fc7cc9ce52c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284900966
+  m_fontColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -331,7 +343,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 133.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
