@@ -17,6 +17,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Slider sliderMusic;
     [SerializeField] private Slider sliderSFX;
     [SerializeField] private Volume volume;
+    public static MenuManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {

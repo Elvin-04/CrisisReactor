@@ -111,7 +111,8 @@ public class LOB_Timer : MonoBehaviour
         {
             currentTime = -1;
             endGame = true;
-            SceneManager.LoadScene("UIDefeatVictory");
+            SceneManager.LoadScene("Lobby");
+            PlayerPrefs.SetInt("Dead", 1);
             //Play anim or sounds here
         }
     }

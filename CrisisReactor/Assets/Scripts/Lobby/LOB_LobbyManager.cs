@@ -10,6 +10,7 @@ public class LOB_LobbyManager : MonoBehaviour
     private Vector2 initCameraPosition;
     private float initCameraSize;
     [SerializeField] private float cameraZoomSpeed;
+    private MG_SoundManager soundManager;
 
 
     private Vector2 cameraPositionDestination;
@@ -33,6 +34,12 @@ public class LOB_LobbyManager : MonoBehaviour
 
     private void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
+        if (PlayerPrefs.GetInt("Dead") == 1)
+        {
+            LOB_Fade.Instance.StartAnimation();
+            soundManager.PlaySound(1);
+        }
         if(PlayerPrefs.GetInt("Zoom") == 1)
             CancelZoom();
     }

@@ -21,7 +21,6 @@ public class EndGame_Manager : MonoBehaviour
             background.color = Color.black;
             background.sprite = null;
             textEndGame.text = "Defeat";
-            soundManager.PlaySound(0);
         }
     }
     public void Restart()
