@@ -14,13 +14,13 @@ public class EndGame_Manager : MonoBehaviour
         soundManager = GameObject.FindGameObjectWithTag("soundManager").GetComponent<MG_SoundManager>();
         if (PlayerPrefs.GetString("Victory") != "")
         {
-            textEndGame.text = "Victory\n" + "Timer : " + PlayerPrefs.GetString("Victory");
+            textEndGame.text = "Victoire\n" + "Temps restant : " + PlayerPrefs.GetString("Victory");
         }
         else
         {
             background.color = Color.black;
             background.sprite = null;
-            textEndGame.text = "Defeat";
+            textEndGame.text = "Defaite";
         }
     }
     public void Restart()
