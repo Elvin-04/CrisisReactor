@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -14,6 +16,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Slider sliderGeneral;
     [SerializeField] private Slider sliderMusic;
     [SerializeField] private Slider sliderSFX;
+    [SerializeField] private Volume volume;
 
     private void Start()
     {
@@ -79,10 +82,16 @@ public class MenuManager : MonoBehaviour
     public void Settings()
     {
         settingsMenu.SetActive(true);
+        Bloom bloom = new Bloom();
+        volume.profile.TryGet(out bloom);
+        bloom.active = false;
     }
     public void CloseSettings()
     {
         settingsMenu.SetActive(false);
+        Bloom bloom = new Bloom();
+        volume.profile.TryGet(out bloom);
+        bloom.active = true;
     }
     public void Credit()
     {
