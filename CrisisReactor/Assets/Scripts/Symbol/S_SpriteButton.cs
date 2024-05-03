@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class S_SpriteButton : MonoBehaviour
 {
@@ -9,5 +10,10 @@ public class S_SpriteButton : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    public void ReturnLobby()
+    {
+        SceneManager.LoadScene("Lobby");
     }
 }
