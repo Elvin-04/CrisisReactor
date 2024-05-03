@@ -147,6 +147,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -47.8
       objectReference: {fileID: 0}
+    - target: {fileID: 4799036202230358316, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
+      propertyPath: checkPaddingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799036202230358316, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
+      propertyPath: m_enableExtraPadding
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5708742756888069370, guid: 55a0aab05d269b24a8bcd032e94f9b5a, type: 3}
       propertyPath: m_Name
       value: UI_AtomsIO

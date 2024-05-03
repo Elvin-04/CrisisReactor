@@ -56,7 +56,7 @@ public class AIO_GameManager : MonoBehaviour
     public void AddPlayerMass(int massToAdd)
     {
         characterMass += massToAdd;
-        currentMassText.text = "Masse : " + characterMass;
+        currentMassText.text = "Masse : " + string.Format("{0:# ###}", characterMass);
         CheckMassForVictory();
     }
 
