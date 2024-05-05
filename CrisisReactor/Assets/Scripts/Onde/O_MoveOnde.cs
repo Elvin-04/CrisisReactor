@@ -16,6 +16,8 @@ public class O_MoveOnde : MonoBehaviour
     [SerializeField] private GameObject button1;
     [SerializeField] private GameObject button2;
     [SerializeField] private MG_SoundManager soundManager;
+    [SerializeField] private GameObject glow1;
+    [SerializeField] private GameObject glow2;
 
     private void Start()
     {
@@ -64,7 +66,9 @@ public class O_MoveOnde : MonoBehaviour
         {
             canMove = true;
             button1.SetActive(false);
+            glow1.SetActive(false);
             button2.SetActive(false);
+            glow2.SetActive(false);
             StartCoroutine(StopMoving(second));
         }
     }
@@ -86,7 +90,9 @@ public class O_MoveOnde : MonoBehaviour
             soundManager.PlaySound(1);
             canMove = false;
             button1.SetActive(true);
+            glow1.SetActive(true);
             button2.SetActive(true);
+            glow2.SetActive(true);
             LOB_Timer.instance.RemoveTimer(20);
         }
     }

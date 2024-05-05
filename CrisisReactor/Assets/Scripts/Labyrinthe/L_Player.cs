@@ -114,4 +114,8 @@ public class L_Player : MonoBehaviour
             Move("Down");
         }
     }
+    public void ReturnLobby()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
 }

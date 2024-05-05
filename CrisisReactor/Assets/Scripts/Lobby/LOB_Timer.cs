@@ -80,9 +80,19 @@ public class LOB_Timer : MonoBehaviour
         if (timerText != null && SceneManager.GetActiveScene().name == "Lobby")
         {
             if ((int)currentTime / 60 == 1)
-                timerText.text = ((int)currentTime / 60).ToString("0 0 ") + ":" + ((int)currentTime % 60).ToString("0 0");
+            {
+                if (((int)currentTime % 60) >= 10 && (((int)currentTime) % 60) < 20)
+                    timerText.text = ((int)currentTime / 60).ToString("0 0 ") + ":" + ((int)currentTime % 60).ToString("0  0");
+                else
+                    timerText.text = ((int)currentTime / 60).ToString("0 0 ") + ":" + ((int)currentTime % 60).ToString("0 0");
+            }
             else
-                timerText.text = ((int)currentTime / 60).ToString("0 0") + ":" + ((int)currentTime % 60).ToString("0 0");
+            {
+                if (((int)currentTime % 60) >= 10 && (((int)currentTime) % 60) < 20)
+                    timerText.text = ((int)currentTime / 60).ToString("0 0") + ":" + ((int)currentTime % 60).ToString("0  0");
+                else
+                    timerText.text = ((int)currentTime / 60).ToString("0 0") + ":" + ((int)currentTime % 60).ToString("0 0");
+            } 
         }
         else if (timerText != null)
             timerText.text = ((int)currentTime / 60).ToString("00") + ":" + ((int)currentTime % 60).ToString("00");
@@ -114,7 +124,7 @@ public class LOB_Timer : MonoBehaviour
         //Loose condition
         if(currentTime <= 0 && !endGame)
         {
-            currentTime = -1;
+            currentTime = 0;
             endGame = true;
             SceneManager.LoadScene("Lobby");
             PlayerPrefs.SetInt("Dead", 1);

@@ -90,6 +90,7 @@ public class MenuManager : MonoBehaviour
     }
     public void Settings()
     {
+        mainMenuButton.SetActive(false);
         settingsMenu.SetActive(true);
         Bloom bloom = new Bloom();
         volume.profile.TryGet(out bloom);
@@ -97,6 +98,7 @@ public class MenuManager : MonoBehaviour
     }
     public void CloseSettings()
     {
+        mainMenuButton.SetActive(true);
         settingsMenu.SetActive(false);
         Bloom bloom = new Bloom();
         volume.profile.TryGet(out bloom);
