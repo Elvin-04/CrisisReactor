@@ -699,7 +699,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6d6398b80c63a6f4eaa738b712d76d52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68a73ca781a215749a8a9ed73cb6ca2a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3276,7 +3276,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: http://crisisreactor.myftp.org/
+          m_StringArgument: https://docs.google.com/document/d/1R8gEKQvmgNSb4P--zmEi7v0v7rPZeK60KMu3RusN5Go/edit
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &642755072
